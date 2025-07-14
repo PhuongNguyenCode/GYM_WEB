@@ -1,0 +1,166 @@
+﻿@{
+    ViewBag.Title = "LienHe";
+    Layout = "~/Views/Shared/_Home.cshtml";
+}
+<link rel="stylesheet" href="~/Content/LienHe.css" />
+
+<main>
+    <!-- Social Media Section -->
+    <section class="social-section" style="background: linear-gradient(135deg, rgba(45, 45, 45, 0.9), rgba(57, 255, 20, 0.1)); padding: 15px 0; text-align: center;">
+        <a href="https://www.facebook.com/?locale=vi_VN" target="_blank" class="social-icon"><img src="~/Images/face.png" alt="Facebook" class="social-image"></a>
+        <a href="https://zalo.me/pc" target="_blank" class="social-icon"><img src="~/Images/zalo.png" alt="Zalo" class="social-image"></a>
+        <a href="https://www.messenger.com/t/100074024685340?locale=vi_VN" target="_blank" class="social-icon"><img src="~/Images/mess.png" alt="Messenger" class="social-image"></a>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section py-5" style="background: linear-gradient(135deg, rgba(57, 255, 20, 0.1), rgba(45, 45, 45, 0.9));">
+        <div class="container">
+            <h2 class="section-title text-neon text-center mb-5">LIÊN HỆ VỚI CHÚNG TÔI</h2>
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="contact-info neon-card p-4">
+                        <h4 class="text-neon-alt">THÔNG TIN LIÊN HỆ</h4>
+                        <p class="text-white"><strong>Địa chỉ:</strong> Số 1 Lê Đại Hành, Hoàn Kiếm, Hà Nội</p>
+                        <p class="text-white"><strong>Điện thoại:</strong> 0905 123 456</p>
+                        <p class="text-white"><strong>Email:</strong> info@thekinggym.com</p>
+                        <p class="text-white"><strong>Giờ làm việc:</strong> 06:00 - 22:00 (Thứ 2 - Chủ nhật)</p>
+                        <img src="~/Images/contact-map.jpg" alt="Bản đồ liên hệ" class="img-fluid rounded-lg shadow-neon mt-3" style="max-height: 300px; object-fit: cover;">
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="contact-form neon-card p-4">
+                        <h4 class="text-neon-alt">GỬI THÔNG TIN CHO CHÚNG TÔI</h4>
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-input" placeholder="Họ và tên" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-input" placeholder="Email" required>
+                            </div>
+                            <div class="mb-3">
+                                <input type="tel" class="form-input" placeholder="Số điện thoại" required>
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-input" placeholder="Lời nhắn" rows="4" required></textarea>
+                            </div>
+                            <button type="submit" class="btn-neon w-100">GỬI LIÊN HỆ</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Terms Section -->
+    <section class="terms-section py-5" style="background: linear-gradient(135deg, rgba(45, 45, 45, 0.9), rgba(57, 255, 20, 0.1));">
+        <div class="container">
+            <h2 class="section-title text-neon-alt text-center mb-5">ĐIỀU KHOẢN & CHÍNH SÁCH</h2>
+            <div class="row">
+                <div class="col-12">
+                    <div class="accordion" id="termsAccordion">
+                        <!-- Chính sách bảo mật -->
+                        <div class="accordion-item neon-card">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button collapsed text-neon-alt" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    1. ĐIỀU KHOẢN CƠ BẢN
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#termsAccordion">
+                                <div class="accordion-body text-white">
+                                    Sau khi đăng ký, gói tập sẽ được kích hoạt ngay tại thời điểm thanh toán. Nếu Hội viên có thắc mắc nào khác, hãy liên hệ với chúng tôi tại số hotline 1900 63 69 20 hoặc gửi email về địa chỉ: cskh@thenewgym.vn, The King Gym rất sẵn lòng lắng nghe các nguyện vọng và đóng góp của bạn.
+                                    Tất cả điều khoản dưới đây sẽ có hiệu lực ngay khi Hội viên xác nhận đăng ký thành công. Khi đó xem như hợp đồng giữa Hội viên và The New Gym đã được ký kết.
+                                    Hội viên sẽ được hưởng tất cả dịch vụ trong khuôn khổ gói tập đã chọn.
+                                    Hội viên không được phép chuyển giao gói tập này cho bất kỳ ai khác.
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Điều khoản sử dụng -->
+                        <div class="accordion-item neon-card">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed text-neon-alt" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    2. PHÍ HỘI VIÊN
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#termsAccordion">
+                                <div class="accordion-body text-white">
+                                    Phí hội viên: là một khoản chi phí liên quan đến việc khởi tạo và thiết lập tài khoản, quản lý và lưu trữ thông tin khách hàng trên hệ thống. Phí hội viên là một khoản phí không hoàn lại. Khách hàng gia hạn sau khi gói tập hết hạn sẽ phải đóng lại phí này.
+                                </div>
+                            </div>
+                            <!-- Quyền lợi khách hàng -->
+                            <div class="accordion-item neon-card">
+                                <h2 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed text-neon-alt" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                        3. CHÍNH SÁCH GIÁ
+                                    </button>
+                                </h2>
+                                <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#termsAccordion">
+                                    <div class="accordion-body text-white">
+                                        Vào từng thời điểm chúng tôi có thể điều chỉnh giá tập cho phù hợp. Hội viên có quyền chấm dứt tư cách thành viên của mình theo các điều khoản và điều kiện thành viên. Nếu Hội viên không chấm dứt Gói tập trước khi điều chỉnh, mức phí này sẽ được áp dụng cho các hội viên gia hạn và hội viên mới.
+                                        Các chương trình khuyến mãi sẽ được áp dụng tại một số chi nhánh nhất định. Mức giá ưu đãi chúng tôi đưa ra vô cùng hấp dẫn, bạn vui lòng theo dõi Facebook
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- Hủy dịch vụ -->
+                            <div class="accordion-item neon-card">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed text-neon-alt" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        4. CHẤM DỨT HỢP ĐỒNG
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#termsAccordion">
+                                    <div class="accordion-body text-white">
+                                        Hội viên có thể chấm dứt Gói tập bất cứ lúc nào.
+                                        The New Gym sẽ không hoàn trả lại bất kỳ chi phí nào trong trường hợp hợp đồng bị chấm dứt.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item neon-card">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed text-neon-alt" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        5. NỘI QUY THE NEW GYM
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#termsAccordion">
+                                    <div class="accordion-body text-white">
+                                        Lời đầu tiên xin chào mừng bạn đến với The New Gym. The New Gym rất vui khi có bạn ở đây với Chúng tôi.
+
+                                        The King Gym hiểu rằng các quy định có thể hơi nhàm chán, nhưng hãy nghĩ về chúng như một phần trong cam kết của The New Gym để giữ an toàn cho bạn trong quá trình tập luyện.
+
+                                        Khuyến khích tham gia các lớp học miễn phí:
+
+                                        The King Gym khuyến khích bạn nên tham gia buổi giới thiệu này để dễ dàng hơn trong việc sử dụng các thiết bị và tận hưởng tất cả tiện ích của The New Gym. Đội ngũ The New Gym thân thiện và chuyên nghiệp luôn sẵn sàng giúp đỡ các bạn.
+                                        Lịch các lớp học miễn phí được cập nhật tại ứng dụng The New Gym.
+                                        Để giữ cho bạn được an toàn khi tập luyện:
+
+                                        Để bảo vệ đôi chân của bạn và hạn chế chán thương trong quá trình vận động, trang phục tập luyện thoải mái và giày thể thao trong suốt quá trình tập luyện là những gì bạn cần phải chuẩn bị.
+                                        Những trang phục như: đồ jeans, bốt, dép xỏ ngón/dép quai hậu hoặc trang phục đi làm đều không phù hợp khi đến phòng tập thể dục: Vì chúng không an toàn hoặc không thiết thực. Hội viên lưu ý cần mặc áo thể thao xuyên suốt quá trình tập luyện.
+                                        Điều cực kỳ quan trọng cần nhớ là bạn không thể sử dụng phòng tập khi đang bị ảnh hưởng bởi các chất kích thích, nó có thể ảnh hưởng đến khả năng tập luyện và sự an toàn của bạn.
+                                        Bạn cũng không nên tham gia bất kỳ hoạt động tập luyện nào có thể gậy hại cho bạn hoặc người khác, như đấu tập, đấm bốc, võ thuật hoặc các hình thước thể thao tiếp xúc mạnh trừ khi tập luyện cùng với các HLV của chúng tôi.
+                                        Bất cứ khi nào bạn không ở trạng thái phù hợp để tập luyện an toàn & hiệu quả thì chúng tôi có thể yêu cầu bạn rời khỏi phòng tập và quay lại khi bạn đã sẵn sàng.
+                                        Để giữ cho tài sản của bạn được an toàn:
+
+                                        Để đảm bảo an toàn, phòng thay đồ chính sẽ được đóng từ 22h00 đến 6h00 hôm sau. Trong thời gian này hội viên có thể sử dụng phòng vệ sinh công cộng và để đồ ở các tủ locker công cộng bên ngoài khu vực tập luyện.
+                                        Sử dụng khăn giấy và dung dịch vệ sinh trong bình xịt để làm sạch thiết bị sau mỗi lần sử dụng.
+                                        Các phòng tập chỉ được sử dụng cho mục đích luyện tập, không sử dụng để ngủ lại qua đêm. Do đó, The New Gym khuyến khích hội viên rời phòng tập khi kết thúc mỗi buổi tập luyện và hẹn gặp lại bạn ở những buổi tập luyện tiếp theo. Một số câu lạc bộ của chúng tôi không mở cửa 24/7 nên bạn hãy đảm bảo mình rời phòng tập trước khi câu lạc bộ đóng cửa.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="accordion-item neon-card">
+                                <h2 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed text-neon-alt" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                        6. ĐIỀU KHOẢN KHÁC
+                                    </button>
+                                </h2>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#termsAccordion">
+                                    <div class="accordion-body text-white">
+                                        Hội viên phải từ 15 tuổi trở lên, những Hội viên dưới 15 tuổi muốn tham gia phải đăng kí gói tập cùng Huấn Luyện Viên cá nhân.
+                                        Hội viên phải tuân thủ Nội quy phòng tập, thiết bị tập và hành vi tập. Chúng tôi có thể điều chỉnh bảng nội quy này khi cần thiết và sẽ thông báo trước khi sự điều chỉnh này có hiệu lực.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

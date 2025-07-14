@@ -1,0 +1,207 @@
+﻿@{
+    ViewBag.Title = "HeThongPhongTap";
+    Layout = "~/Views/Shared/_Home.cshtml";
+}
+<link rel="stylesheet" href="~/Content/HTPhongTap.css" />
+
+<main>
+    <!-- Hero Section -->
+    <section class="hero-section" style="position: relative; overflow: hidden; min-height: 400px;">
+        <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('~/Images/gym-network-bg.jpg') no-repeat center center/cover; opacity: 0.3; z-index: 1;"></div>
+        <div class="container position-relative" style="z-index: 2; padding-top: 100px; padding-bottom: 50px;">
+            <h1 class="hero-title text-neon" style="font-size: 3.5rem; font-weight: 900;">HỆ THỐNG PHÒNG TẬP</h1>
+            <p class="lead text-white" style="max-width: 600px; margin: 20px auto;">Khám phá các chi nhánh đẳng cấp của THE KING GYM trên toàn quốc!</p>
+            <div class="search-container mb-4">
+                <input type="text" id="locationSearch" class="form-input" placeholder="Tìm chi nhánh (Hà Nội, TP. HCM, Đà Nẵng)...">
+                <button class="btn-neon search-btn" onclick="searchLocation()">Tìm</button>
+            </div>
+            <a href="#locations" class="btn-neon mt-3">XEM THÊM</a>
+        </div>
+        <div class="neon-effect" style="position: absolute; width: 100%; height: 100%; z-index: 0;"></div>
+    </section>
+
+    <!-- Danh sách Phòng tập -->
+    <section class="locations-section py-5" style="background: linear-gradient(135deg, rgba(57, 255, 20, 0.1), rgba(45, 45, 45, 0.9));" id="locations">
+        <div class="container">
+            <h2 class="section-title text-neon text-center mb-5">CÁC CHI NHÁNH CỦA CHÚNG TÔI</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="location-card neon-card text-center p-4" onclick="showLocationDetail('hanoi')">
+                        <img src="~/Images/coso1.jpg" alt="Hà Nội" class="location-img">
+                        <h4 class="card-title text-neon-alt">HÀ NỘI</h4>
+                        <p class="card-text text-white">Số 1 Lê Đại Hành, Hoàn Kiếm</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="location-card neon-card text-center p-4" onclick="showLocationDetail('hcm')">
+                        <img src="~/Images/coso1.jpg" alt="TP. HCM" class="location-img">
+                        <h4 class="card-title text-neon-alt">TP. HỒ CHÍ MINH</h4>
+                        <p class="card-text text-white">Số 10 Nguyễn Huệ, Quận 1</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="location-card neon-card text-center p-4" onclick="showLocationDetail('danang')">
+                        <img src="~/Images/coso1.jpg" alt="Đà Nẵng" class="location-img">
+                        <h4 class="card-title text-neon-alt">ĐÀ NẴNG</h4>
+                        <p class="card-text text-white">Số 5 Trần Phú, Hải Châu</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="location-card neon-card text-center p-4" onclick="showLocationDetail('danang')">
+                        <img src="~/Images/coso1.jpg" alt="Cần Thơ" class="location-img">
+                        <h4 class="card-title text-neon-alt">Cần Thơ</h4>
+                        <p class="card-text text-white">Số 5 Trần Phú, Ninh Kiều</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="location-card neon-card text-center p-4" onclick="showLocationDetail('danang')">
+                        <img src="~/Images/coso1.jpg" alt="Huế" class="location-img">
+                        <h4 class="card-title text-neon-alt">Huế</h4>
+                        <p class="card-text text-white">Số 5 Trần Phú, Thăng Long</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bản đồ vị trí -->
+    <section class="map-section py-5" style="background: linear-gradient(135deg, rgba(45, 45, 45, 0.9), rgba(57, 255, 20, 0.1));">
+        <div class="container">
+            <h2 class="section-title text-neon-alt text-center mb-5">VỊ TRÍ CÁC CHI NHÁNH</h2>
+            <div id="map" style="height: 400px; border: 2px solid rgba(57, 255, 20, 0.5); border-radius: 10px; overflow: hidden;">
+                <img src="~/Images/mappp.jpg" alt="Bản đồ các chi nhánh" class="map-image" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Lời kêu gọi hành động -->
+    <section class="cta-section py-5 text-center" style="background: linear-gradient(135deg, rgba(57, 255, 20, 0.1), rgba(45, 45, 45, 0.9));">
+        <div class="container">
+            <h2 class="text-neon mb-4">SẴN SÀNG CHINH PHỤC?</h2>
+            <p class="lead text-white mb-4">Tìm chi nhánh gần nhất và bắt đầu hành trình tập luyện ngay hôm nay!</p>
+            <a href="@Url.Action("DkyGoiTap", "Home")" class="btn-neon">ĐĂNG KÝ NGAY</a>
+        </div>
+    </section>
+
+    <!-- Modal chi tiết phòng tập -->
+    <div class="modal fade" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content bg-dark text-white">
+                <div class="modal-header">
+                    <h5 class="modal-title text-neon" id="locationModalLabel">Chi tiết phòng tập</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <img src="~/Images/coso1.jpg" alt="Phòng tập" class="img-fluid rounded-lg shadow-neon modal-image" id="modalImage">
+                        </div>
+                        <div class="col-md-6">
+                            <h4 class="text-neon-alt" id="modalTitle"></h4>
+                            <p><strong>Địa chỉ:</strong> <span id="modalAddress"></span></p>
+                            <p><strong>Số điện thoại:</strong> <span id="modalPhone"></span></p>
+                            <p><strong>Lịch làm việc:</strong> <span id="modalSchedule"></span></p>
+                            <a href="#" class="btn-neon mt-3" id="modalDirection">Xem hướng dẫn</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script>
+    // Tìm kiếm chi nhánh
+    function searchLocation() {
+        const searchTerm = document.getElementById('locationSearch').value.toLowerCase();
+        const locations = document.querySelectorAll('.location-card');
+        let found = false;
+
+        locations.forEach(location => {
+            const title = location.querySelector('.card-title').textContent.toLowerCase();
+            if (title.includes(searchTerm)) {
+                location.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                found = true;
+            }
+        });
+
+        if (!found) {
+            alert('Không tìm thấy chi nhánh!');
+        }
+    }
+
+    // Hiển thị chi tiết phòng tập
+    function showLocationDetail(locationId) {
+        const modal = new bootstrap.Modal(document.getElementById('locationModal'));
+        const modalImage = document.getElementById('modalImage');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalAddress = document.getElementById('modalAddress');
+        const modalPhone = document.getElementById('modalPhone');
+        const modalSchedule = document.getElementById('modalSchedule');
+        const modalDirection = document.getElementById('modalDirection');
+
+        let data = {};
+        switch (locationId) {
+            case 'hanoi':
+                data = {
+                    image: '~/Images/coso1.jpg',
+                    title: 'HÀ NỘI',
+                    address: 'Số 1 Lê Đại Hành, Hoàn Kiếm',
+                    phone: '0905 123 456',
+                    schedule: '06:00 - 22:00 (Thứ 2 - Chủ nhật)',
+                    direction: 'https://maps.google.com/?q=Số 1 Lê Đại Hành, Hoàn Kiếm, Hà Nội'
+                };
+                break;
+            case 'hcm':
+                data = {
+                    image: '~/Images/coso1.jpg',
+                    title: 'TP. HỒ CHÍ MINH',
+                    address: 'Số 10 Nguyễn Huệ, Quận 1',
+                    phone: '0905 654 321',
+                    schedule: '06:00 - 22:00 (Thứ 2 - Chủ nhật)',
+                    direction: 'https://maps.google.com/?q=Số 10 Nguyễn Huệ, Quận 1, TP. HCM'
+                };
+                break;
+            case 'danang':
+                data = {
+                    image: '~/Images/coso1.jpg',
+                    title: 'ĐÀ NẴNG',
+                    address: 'Số 5 Trần Phú, Hải Châu',
+                    phone: '0905 789 123',
+                    schedule: '06:00 - 22:00 (Thứ 2 - Chủ nhật)',
+                    direction: 'https://maps.google.com/?q=Số 5 Trần Phú, Hải Châu, Đà Nẵng'
+                };
+                break;
+            case 'cantho':
+                data = {
+                    image: '~/Images/coso1.jpg',
+                    title: 'ĐÀ NẴNG',
+                    address: 'Số 5 Trần Phú, Ninh Kiều',
+                    phone: '0905 789 123',
+                    schedule: '06:00 - 22:00 (Thứ 2 - Chủ nhật)',
+                    direction: 'https://maps.google.com/?q=Số 5 Trần Phú, Hải Châu, Đà Nẵng'
+                };
+                break;
+            case 'hue':
+                data = {
+                    image: '~/Images/coso1.jpg',
+                    title: 'ĐÀ NẴNG',
+                    address: 'Số 5 Trần Phú, Thăng Long',
+                    phone: '0905 789 123',
+                    schedule: '06:00 - 22:00 (Thứ 2 - Chủ nhật)',
+                    direction: 'https://maps.google.com/?q=Số 5 Trần Phú, Hải Châu, Đà Nẵng'
+                };
+                break;
+        }
+
+        modalImage.src = data.image;
+        modalTitle.textContent = data.title;
+        modalAddress.textContent = data.address;
+        modalPhone.textContent = data.phone;
+        modalSchedule.textContent = data.schedule;
+        modalDirection.href = data.direction;
+        modalDirection.target = '_blank';
+
+        modal.show();
+    }
+</script>

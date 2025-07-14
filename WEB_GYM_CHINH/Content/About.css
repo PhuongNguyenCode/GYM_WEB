@@ -1,0 +1,229 @@
+﻿/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+/*=============== BIẾN CSS ===============*/
+:root {
+    /*========== Màu sắc neon gradient ==========*/
+    --first-color: hsl(120, 100%, 50%); /* Xanh neon */
+    --first-color-alt: hsl(45, 100%, 50%); /* Vàng neon */
+    --title-color: hsl(0, 0%, 100%); /* Trắng */
+    --white-color: hsl(0, 0%, 100%); /* Trắng */
+    --text-color: hsl(0, 0%, 80%); /* Xám nhạt */
+    --body-color: hsl(0, 0%, 10%); /* Đen tối */
+    --container-color: rgba(26, 26, 26, 0.9); /* Nền mờ tối */
+    /*========== Phông chữ và kiểu chữ ==========*/
+    --body-font: "Roboto", "Montserrat", sans-serif;
+    --big-font-size: 1.5rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --tiny-font-size: .688rem;
+    /*========== Độ đậm chữ ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    /*========== Chỉ số z ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*========== Kích thước chữ khi màn hình lớn ==========*/
+@media screen and (min-width: 1150px) {
+    :root {
+        --big-font-size: 3rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --tiny-font-size: .75rem;
+    }
+}
+
+/*=============== CÀI ĐẶT CƠ BẢN ===============*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    margin: 0;
+    padding-top: 70px; /* Để không bị che bởi header fixed */
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*=============== HERO SECTION ===============*/
+.hero-section {
+    background: linear-gradient(135deg, rgba(45, 45, 45, 0.9), rgba(57, 255, 20, 0.1));
+    position: relative;
+    overflow: hidden;
+    min-height: 400px;
+}
+
+.hero-title {
+    color: var(--first-color);
+    text-shadow: 0 0 10px var(--first-color);
+}
+
+.btn-neon {
+    background: linear-gradient(45deg, var(--first-color), var(--first-color-alt));
+    color: var(--white-color);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: var(--font-semi-bold);
+    cursor: pointer;
+    transition: background .3s, box-shadow .3s, transform .3s;
+    box-shadow: 0 0 10px var(--first-color);
+}
+
+    .btn-neon:hover {
+        background: linear-gradient(45deg, var(--first-color-alt), var(--first-color));
+        box-shadow: 0 0 20px var(--first-color-alt);
+        transform: translateY(-5px);
+    }
+
+.neon-effect {
+    background: radial-gradient(circle, rgba(57, 255, 20, 0.1) 0%, rgba(45, 45, 45, 0.9) 70%);
+    animation: neonPulse 5s infinite alternate;
+}
+
+@keyframes neonPulse {
+    0% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+/*=============== ABOUT SECTION ===============*/
+.about-section {
+    padding: 40px 20px;
+}
+
+.section-title {
+    color: var(--first-color);
+    text-shadow: 0 0 10px var(--first-color);
+    font-size: var(--big-font-size);
+    margin-bottom: 20px;
+}
+
+.image-container {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+.shadow-neon {
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+    transition: box-shadow .3s;
+}
+
+.hover-scale {
+    transition: transform .3s;
+}
+
+.image-container:hover .hover-scale {
+    transform: scale(1.05);
+}
+
+.play-button {
+    transition: color .3s, text-shadow .3s;
+}
+
+    .play-button:hover {
+        color: var(--first-color-alt);
+        text-shadow: 0 0 20px var(--first-color-alt);
+    }
+
+/*=============== SERVICE QUALITY SECTION ===============*/
+.service-quality-section {
+    padding: 40px 20px;
+}
+
+.neon-card {
+    background: rgba(57, 255, 20, 0.2);
+    border: 2px solid rgba(57, 255, 20, 0.5);
+    border-radius: 15px;
+    transition: transform .3s, box-shadow .3s;
+}
+
+    .neon-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px var(--first-color);
+    }
+
+.card-icon {
+    color: var(--first-color-alt);
+}
+
+.card-title {
+    color: var(--first-color);
+    text-shadow: 0 0 5px var(--first-color);
+}
+
+/*=============== LEADERSHIP SECTION ===============*/
+.leadership-section {
+    padding: 40px 20px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: box-shadow .3s;
+}
+
+    .carousel-control-prev:hover,
+    .carousel-control-next:hover {
+        box-shadow: 0 0 20px var(--first-color);
+    }
+
+.card {
+    border: none;
+    background: none;
+}
+
+    .card:hover {
+        box-shadow: 0 0 20px rgba(57, 255, 20, 0.5);
+    }
+
+/*=============== RESPONSIVE ===============*/
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    .btn-neon {
+        padding: 8px 16px;
+    }
+
+    .image-container img {
+        max-height: 300px;
+    }
+
+    .row .col-md-6 {
+        flex: 100%;
+    }
+
+    .section-title {
+        font-size: var(--normal-font-size);
+    }
+
+    .neon-card {
+        margin-bottom: 20px;
+    }
+}

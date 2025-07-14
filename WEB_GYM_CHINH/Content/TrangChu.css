@@ -1,0 +1,280 @@
+﻿/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+/*=============== BIẾN CSS ===============*/
+:root {
+    /*========== Màu sắc neon gradient ==========*/
+    --first-color: hsl(120, 100%, 50%); /* Xanh neon */
+    --first-color-alt: hsl(45, 100%, 50%); /* Vàng neon */
+    --title-color: hsl(0, 0%, 100%); /* Trắng */
+    --white-color: hsl(0, 0%, 100%); /* Trắng */
+    --text-color: hsl(0, 0%, 80%); /* Xám nhạt */
+    --body-color: hsl(0, 0%, 10%); /* Đen tối */
+    --container-color: rgba(26, 26, 26, 0.9); /* Nền mờ tối */
+    /*========== Phông chữ và kiểu chữ ==========*/
+    --body-font: "Roboto", "Montserrat", sans-serif;
+    --big-font-size: 1.5rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --tiny-font-size: .688rem;
+    /*========== Độ đậm chữ ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    /*========== Chỉ số z ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*========== Kích thước chữ khi màn hình lớn ==========*/
+@media screen and (min-width: 1150px) {
+    :root {
+        --big-font-size: 3rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --tiny-font-size: .75rem;
+    }
+}
+
+/*=============== CÀI ĐẶT CƠ BẢN ===============*/
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--body-font);
+    background-color: var(--body-color);
+    color: var(--text-color);
+    margin: 0;
+    padding-top: 70px; /* Để không bị che bởi header fixed */
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+/*=============== HEADER (Kế thừa từ DkyGoiTap.css) ===============*/
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--body-color);
+    padding: 10px 20px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: var(--z-fixed);
+    box-shadow: 0 0 10px rgba(57, 255, 20, 0.3);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--first-color);
+    text-shadow: 0 0 5px var(--first-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+    margin: 0;
+}
+
+nav a {
+    color: var(--white-color);
+    text-decoration: none;
+    font-weight: var(--font-semi-bold);
+    transition: color .3s, text-shadow .3s;
+}
+
+    nav a:hover,
+    nav a.highlight {
+        color: var(--first-color-alt);
+        text-shadow: 0 0 10px var(--first-color-alt);
+    }
+
+/*=============== BANNER SLIDER ===============*/
+.carousel {
+    position: relative;
+}
+
+.carousel-inner img {
+    max-height: 500px;
+}
+
+.carousel-caption {
+    bottom: 20%;
+    text-align: center;
+    width: 100%;
+}
+
+.text-shadow {
+    text-shadow: 0 0 10px var(--first-color);
+}
+
+.btn-neon {
+    background: linear-gradient(45deg, var(--first-color), var(--first-color-alt));
+    color: var(--white-color);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 5px;
+    font-weight: var(--font-semi-bold);
+    cursor: pointer;
+    transition: background .3s, box-shadow .3s, transform .3s;
+    box-shadow: 0 0 10px var(--first-color);
+}
+
+    .btn-neon:hover {
+        background: linear-gradient(45deg, var(--first-color-alt), var(--first-color));
+        box-shadow: 0 0 20px var(--first-color-alt);
+        transform: translateY(-5px);
+    }
+
+.neon-control {
+    background: rgba(0, 0, 0, 0.5);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: box-shadow .3s;
+}
+
+    .neon-control:hover {
+        box-shadow: 0 0 20px var(--first-color);
+    }
+
+/*=============== GIỚI THIỆU ===============*/
+section {
+    padding: 40px 20px;
+}
+
+.text-neon {
+    color: var(--first-color);
+    text-shadow: 0 0 10px var(--first-color);
+}
+
+.text-neon-alt {
+    color: var(--first-color-alt);
+    text-shadow: 0 0 10px var(--first-color-alt);
+}
+
+/*=============== ƯU ĐÃI ===============*/
+.promo-card {
+    border: 2px solid rgba(57, 255, 20, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+    .promo-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 0 20px var(--first-color);
+    }
+
+.promo-img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-bottom: 2px solid rgba(57, 255, 20, 0.5);
+}
+
+.bg-neon-card {
+    background: rgba(57, 255, 20, 0.2);
+}
+
+.bg-neon-card-alt {
+    background: rgba(255, 215, 0, 0.2);
+}
+
+.card-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/*=============== BỘ MÔN & HUẤN LUYỆN VIÊN ===============*/
+.course-card {
+    border: 2px solid rgba(57, 255, 20, 0.5);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.shadow-neon {
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.3);
+    transition: box-shadow .3s;
+}
+
+.course-card:hover {
+    box-shadow: 0 0 20px var(--first-color);
+}
+
+/*=============== ĐĂNG KÝ ===============*/
+.form-group {
+    margin-bottom: 20px;
+}
+
+    .form-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: var(--font-medium);
+        color: var(--white-color);
+        font-size: var(--normal-font-size);
+    }
+
+    .form-group .required {
+        color: hsl(0, 80%, 60%);
+    }
+
+    .form-group .form-input {
+        width: 100%;
+        height: 48px;
+        padding: 0 12px;
+        border: 2px solid rgba(57, 255, 20, 0.5);
+        border-radius: 4px;
+        font-size: var(--normal-font-size);
+        background: none;
+        color: var(--white-color);
+        transition: border-color .3s, box-shadow .3s;
+    }
+
+.form-input:focus {
+    border-color: var(--first-color);
+    box-shadow: 0 0 10px var(--first-color);
+}
+
+/*=============== RESPONSIVE ===============*/
+@media (max-width: 768px) {
+    .carousel-caption {
+        bottom: 10%;
+    }
+
+        .carousel-caption h1 {
+            font-size: 1.5rem;
+        }
+
+    .btn-neon {
+        padding: 8px 16px;
+    }
+
+    .row .col-md-3,
+    .row .col-md-4 {
+        flex: 100%;
+    }
+
+    .promo-img {
+        height: 120px;
+    }
+
+    section {
+        padding: 20px 10px;
+    }
+}

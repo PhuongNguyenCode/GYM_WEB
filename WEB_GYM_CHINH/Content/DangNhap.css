@@ -1,0 +1,448 @@
+﻿/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+/*=============== BIẾN CSS ===============*/
+:root {
+    /*========== Màu sắc neon gradient ==========*/
+    --first-color: hsl(120, 100%, 50%); /* Xanh neon */
+    --first-color-alt: hsl(45, 100%, 50%); /* Vàng neon */
+    --title-color: hsl(0, 0%, 100%); /* Trắng */
+    --white-color: hsl(0, 0%, 100%); /* Trắng */
+    --text-color: hsl(0, 0%, 80%); /* Xám nhạt */
+    --body-color: hsl(0, 0%, 10%); /* Đen tối */
+    --container-color: rgba(26, 26, 26, 0.9); /* Nền mờ tối */
+    /*========== Phông chữ và kiểu chữ ==========*/
+    --body-font: "Montserrat", system-ui;
+    --big-font-size: 1.5rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --tiny-font-size: .688rem;
+    /*========== Độ đậm chữ ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    /*========== Chỉ số z ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*========== Kích thước chữ khi màn hình lớn ==========*/
+@media screen and (min-width: 1150px) {
+    :root {
+        --big-font-size: 3rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --tiny-font-size: .75rem;
+    }
+}
+
+/*=============== CÀI ĐẶT CƠ BẢN ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body,
+input,
+button {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+    /* Loại bỏ overflow: hidden để cho phép cuộn */
+    position: relative;
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*=============== CLASS TÁI SỬ DỤNG ===============*/
+.container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+/*=============== ĐĂNG NHẬP ===============*/
+.login {
+    position: relative;
+    min-height: 100vh; /* Thay height để cho phép cuộn */
+    align-items: center;
+    background: linear-gradient(135deg, rgba(57, 255, 20, 0.1), rgba(45, 45, 45, 0.9)); /* Gradient neon */
+    animation: neonPulse 5s infinite alternate; /* Hiệu ứng pulse */
+}
+
+.login__blob {
+    display: none;
+}
+
+.login__title {
+    font-size: var(--big-font-size);
+    color: var(--title-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px var(--first-color); /* Neon effect */
+}
+
+.login__box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--container-color);
+    border-radius: 1rem;
+    border: 2px solid rgba(57, 255, 20, 0.5); /* Viền neon */
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.3); /* Bóng neon */
+}
+
+.login__input {
+    background: none;
+    width: 100%;
+    padding: 1.5rem 2.5rem 1.5rem 1.25rem;
+    font-weight: var(--font-semi-bold);
+    border: 3px solid transparent;
+    border-radius: 1rem;
+    z-index: 1;
+    transition: border-color .4s, box-shadow .4s;
+    color: var(--white-color);
+}
+
+    .login__input:autofill {
+        transition: background-color 6000s, color 6000s;
+    }
+
+.login__label {
+    position: absolute;
+    left: 1.25rem;
+    font-weight: var(--font-semi-bold);
+    color: var(--text-color);
+    transition: transform .4s, font-size .4s, color .4s;
+}
+
+.login__icon {
+    position: absolute;
+    right: 1rem;
+    font-size: 1.25rem;
+    color: var(--text-color);
+    transition: color .4s;
+}
+
+.login__password {
+    cursor: pointer;
+    z-index: 10;
+}
+
+.login__forgot {
+    display: block;
+    width: max-content;
+    margin: 1rem 0 0 auto;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-semi-bold);
+    color: var(--text-color);
+    transition: color .4s;
+}
+
+    .login__forgot:hover {
+        color: var(--first-color);
+        text-shadow: 0 0 5px var(--first-color);
+    }
+
+.login__button {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    background: linear-gradient(45deg, var(--first-color), var(--first-color-alt)); /* Gradient neon */
+    color: var(--white-color);
+    font-weight: var(--font-semi-bold);
+    padding-block: 1.5rem;
+    border-radius: 4rem;
+    margin-block: 2rem;
+    cursor: pointer;
+    transition: background-color .4s, box-shadow .4s, transform .4s;
+    box-shadow: 0 0 10px var(--first-color);
+}
+
+    .login__button:hover {
+        background: linear-gradient(45deg, var(--first-color-alt), var(--first-color));
+        box-shadow: 0 0 20px var(--first-color-alt), 0 0 30px var(--first-color);
+        transform: translateY(-5px);
+    }
+
+.login__social {
+    margin-bottom: 2rem;
+}
+
+.login__social-title {
+    text-align: center;
+    font-size: var(--small-font-size);
+    font-weight: var(--font-semi-bold);
+    color: var(--title-color);
+    margin-bottom: 1rem;
+}
+
+.login__social-img {
+    width: 1rem;
+}
+
+.login__social-links {
+    display: flex;
+    justify-content: center;
+    column-gap: 1.5rem;
+}
+
+.login__social-link {
+    width: 32px;
+    height: 32px;
+    background-color: var(--container-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: .5rem;
+    display: grid;
+    place-items: center;
+    transition: transform .4s, box-shadow .4s;
+    border: 1px solid rgba(57, 255, 20, 0.3);
+}
+
+    .login__social-link:hover {
+        transform: translateY(-.25rem);
+        box-shadow: 0 0 10px rgba(57, 255, 20, 0.5);
+    }
+
+.login__switch {
+    text-align: center;
+    font-size: var(--small-font-size);
+}
+
+    .login__switch button {
+        background: none;
+        color: var(--first-color);
+        font-size: var(--small-font-size);
+        font-weight: var(--font-semi-bold);
+        cursor: pointer;
+        transition: color .4s, text-shadow .4s;
+    }
+
+        .login__switch button:hover {
+            color: var(--first-color-alt);
+            text-shadow: 0 0 5px var(--first-color-alt);
+        }
+
+.login__access,
+.login__register {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 100%;
+    transition: transform .4s, opacity .4s .1s;
+    background: rgba(26, 26, 26, 0.95); /* Nền tối mờ */
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+}
+
+.login__register {
+    transform: translateX(15rem);
+    opacity: 0;
+    pointer-events: none;
+}
+
+/* Khi focus vào input thì label di chuyển lên trên */
+.login__input:focus ~ .login__label {
+    transform: translateY(-12px);
+    font-size: var(--tiny-font-size);
+    color: var(--first-color);
+}
+
+.login__input:focus {
+    padding-block: 2rem 1rem;
+    border-color: var(--first-color);
+    box-shadow: 0 0 10px var(--first-color);
+}
+
+/* Giữ label ở trên nếu có nội dung */
+.login__input:not(:placeholder-shown).login__input:not(:focus) ~ .login__label {
+    transform: translateY(-12px);
+    font-size: var(--tiny-font-size);
+    color: var(--text-color);
+}
+
+.login__input:not(:placeholder-shown).login__input:not(:focus) {
+    padding-block: 2rem 1rem;
+}
+
+/* Màu khi focus */
+.login__input:focus {
+    border-color: var(--first-color);
+}
+
+    .login__input:focus ~ .login__label,
+    .login__input:focus ~ .login__icon {
+        color: var(--first-color);
+    }
+
+/* Chuyển qua lại giữa đăng nhập và đăng ký */
+.active .login__access {
+    transform: translateX(15rem);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.active .login__register {
+    transform: translateX(0);
+    opacity: 1;
+    pointer-events: initial;
+}
+
+/*=============== BREAKPOINTS - ĐIỂM DỪNG ===============*/
+/* Cho màn hình nhỏ */
+@media screen and (max-width: 320px) {
+    .container {
+        margin-inline: 1rem;
+    }
+}
+
+/* Cho màn hình trung bình */
+@media screen and (min-width: 540px) {
+    .login__area {
+        width: 380px;
+        margin-inline: auto;
+    }
+}
+
+@media screen and (min-width: 350px) and (max-height: 600px) {
+    .login {
+        min-height: 760px; /* Thay height để cho phép cuộn */
+    }
+}
+
+/* Cho màn hình lớn */
+@media screen and (min-width: 1150px) {
+    .container {
+        margin-inline: auto;
+    }
+
+    .login__area {
+        width: 460px;
+        margin: initial;
+    }
+
+    .login__access,
+    .login__register {
+        width: 600px;
+    }
+
+    .login__title {
+        text-align: initial;
+        margin-bottom: 3rem;
+    }
+
+    .login__button {
+        margin-bottom: 3rem;
+    }
+
+    .login__group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .login__blob {
+        display: block;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .login__img {
+        transform: translate(0rem, 0rem);
+    }
+}
+
+/*=============== NAVIGATION BAR =============== */
+header {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+#bg1 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #000;
+    color: var(--first-color); /* Xanh neon */
+    margin-top: 100px; /* tránh bị navbar che */
+}
+
+    #bg1 h1, #bg1 h2 {
+        margin: 10px 0;
+    }
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--first-color); /* Xanh neon */
+}
+
+#navbar {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+    #navbar li a {
+        text-decoration: none;
+        color: var(--white-color);
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+
+        #navbar li a.active,
+        #navbar li a:hover {
+            color: var(--first-color-alt); /* Vàng neon */
+        }
+
+body {
+    margin: 0;
+    padding-top: 70px; /* để không bị che bởi navbar fixed */
+}
+
+/* Hiệu ứng neon pulse */
+@keyframes neonPulse {
+    0% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}

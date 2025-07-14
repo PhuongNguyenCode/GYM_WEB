@@ -1,0 +1,168 @@
+﻿@{
+    ViewBag.Title = "VeChungToi";
+    Layout = "~/Views/Shared/_Home.cshtml";
+}
+<link rel="stylesheet" href="~/Content/About.css" />
+
+<main>
+    <!-- Hero Section with Dynamic Background -->
+    <section class="hero-section" style="position: relative; overflow: hidden; min-height: 400px;">
+        <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('~/Images/about-bg.jpg') no-repeat center center/cover; opacity: 0.3; z-index: 1;"></div>
+        <div class="container position-relative" style="z-index: 2; padding-top: 100px; padding-bottom: 50px;">
+            <h1 class="hero-title text-neon" style="font-size: 3.5rem; font-weight: 900;">VỀ THE KING GYM</h1>
+            <p class="lead text-white" style="max-width: 600px; margin: 20px auto;">Khám phá hành trình sức mạnh và phong cách sống đỉnh cao cùng chúng tôi!</p>
+            <a href="@Url.Action("DkyGoiTap", "Home")" class="btn-neon mt-3">KHÁM PHÁ NGAY</a>
+        </div>
+        <div class="neon-effect" style="position: absolute; width: 100%; height: 100%; z-index: 0;"></div>
+    </section>
+
+    <!-- About Us Section with Split Design -->
+    <section class="about-section py-5" style="background: linear-gradient(135deg, rgba(45, 45, 45, 0.9), rgba(57, 255, 20, 0.1));">
+        <div class="container">
+            <div class="row align-items-center flex-row-reverse">
+                <div class="col-md-6">
+                    <div class="image-container">
+                        <img src="~/Images/left-about.jpg" alt="Gym Action" class="img-fluid rounded-lg shadow-neon hover-scale" style="max-height: 450px; object-fit: cover; border: 3px solid rgba(57, 255, 20, 0.5);">
+                        <div class="play-button text-neon-alt" style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-size: 2.5rem; cursor: pointer;">
+                            <i class="fas fa-play"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <h2 class="section-title text-neon">CHÚNG TÔI LÀ THE KING GYM</h2>
+                    <p class="text-light lead mb-4">Kể từ năm 2012, THE KING GYM đã dẫn đầu trong việc nâng cao sức khỏe thể chất và tinh thần. Với đội ngũ HLV chuyên nghiệp, thiết bị nhập khẩu từ EU/US, và không gian tập luyện đẳng cấp, chúng tôi cam kết mang đến trải nghiệm 5 sao, thay đổi cuộc sống của bạn theo hướng tốt đẹp hơn.</p>
+                    <ul class="list-unstyled text-white">
+                        <li class="mb-2"><i class="fas fa-check-circle text-neon me-2"></i>Đa dạng bộ môn thể thao</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-neon me-2"></i>Thiết bị hiện đại đạt chuẩn quốc tế</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-neon me-2"></i>Dịch vụ 5 sao khắp Việt Nam</li>
+                    </ul>
+                    <a href="@Url.Action("DkyGoiTap", "Home")" class="btn-neon mt-3">THAM GIA NGAY</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Quality Section with Neon Cards -->
+    <section class="service-quality-section py-5" style="background: linear-gradient(135deg, rgba(57, 255, 20, 0.1), rgba(45, 45, 45, 0.9));">
+        <div class="container">
+            <h2 class="text-center mb-5 text-neon-alt" style="text-shadow: 0 0 10px var(--first-color-alt);">CHẤT LƯỢNG DỊCH VỤ</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card neon-card text-center p-4">
+                        <div class="card-icon mb-3" style="font-size: 2.5rem;">❤️</div>
+                        <h4 class="card-title text-neon">UY TÍN, TẬN TÂM</h4>
+                        <p class="card-text text-white">Luôn đặt khách hàng làm trung tâm với dịch vụ tận tâm nhất.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card neon-card text-center p-4">
+                        <div class="card-icon mb-3" style="font-size: 2.5rem;">👨‍🏫</div>
+                        <h4 class="card-title text-neon">HLV CHUYÊN NGHIỆP</h4>
+                        <p class="card-text text-white">Đội ngũ HLV giàu kinh nghiệm hỗ trợ bạn chinh phục mục tiêu.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card neon-card text-center p-4">
+                        <div class="card-icon mb-3" style="font-size: 2.5rem;">🏋️‍♂️</div>
+                        <h4 class="card-title text-neon">TRANG THIẾT BỊ HIỆN ĐẠI</h4>
+                        <p class="card-text text-white">Thiết bị cao cấp nhập khẩu, tạo nên đẳng cấp riêng.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leadership Team with Slider -->
+    <section class="leadership-section py-5" style="background: linear-gradient(135deg, rgba(45, 45, 45, 0.9), rgba(57, 255, 20, 0.1));">
+        <div class="container">
+            <h2 class="text-center mb-5 text-neon" style="text-shadow: 0 0 10px var(--first-color);">ĐỘI NGŨ LÃNH ĐẠO</h2>
+            <div id="leadershipCarousel" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-md-3">
+                                <div class="card text-center p-3 shadow-neon">
+                                    <img src="~/Images/leader1.jpg" class="card-img-top rounded-circle" alt="Bill Robertson" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid rgba(57, 255, 20, 0.5);">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-neon-alt">Bill Robertson</h4>
+                                        <p class="card-text text-white">Founder & Director</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card text-center p-3 shadow-neon">
+                                    <img src="~/Images/leader2.jpg" class="card-img-top rounded-circle" alt="Phan Khai" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid rgba(57, 255, 20, 0.5);">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-neon-alt">Phan Khai</h4>
+                                        <p class="card-text text-white">Executive Chair</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-md-3">
+                                <div class="card text-center p-3 shadow-neon">
+                                    <img src="~/Images/leader3.jpg" class="card-img-top rounded-circle" alt="Thanh Nghiêm" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid rgba(57, 255, 20, 0.5);">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-neon-alt">Thanh Nghiêm</h4>
+                                        <p class="card-text text-white">CEO</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card text-center p-3 shadow-neon">
+                                    <img src="~/Images/leader4.jpg" class="card-img-top rounded-circle" alt="Bảo Lâm" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid rgba(57, 255, 20, 0.5);">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-neon-alt">Bảo Lâm</h4>
+                                        <p class="card-text text-white">COO</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row g-4 justify-content-center">
+                            <div class="col-md-3">
+                                <div class="card text-center p-3 shadow-neon">
+                                    <img src="~/Images/leader5.jpg" class="card-img-top rounded-circle" alt="Phương Nguyên" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid rgba(57, 255, 20, 0.5);">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-neon-alt">Phương Nguyên</h4>
+                                        <p class="card-text text-white">Marketing Director</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="card text-center p-3 shadow-neon">
+                                    <img src="~/Images/leader6.jpg" class="card-img-top rounded-circle" alt="Khiêm" style="width: 150px; height: 150px; object-fit: cover; border: 3px solid rgba(57, 255, 20, 0.5);">
+                                    <div class="card-body">
+                                        <h4 class="card-title text-neon-alt">Khiêm</h4>
+                                        <p class="card-text text-white">Trainer Manager</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev neon-control" type="button" data-bs-target="#leadershipCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next neon-control" type="button" data-bs-target="#leadershipCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script>
+    $(document).ready(function () {
+        $('.play-button').on('click', function () {
+            alert('Video giới thiệu sẽ được phát! (Thêm video thực tế tại đây)');
+            // Thêm logic phát video nếu có
+        });
+    });
+</script>

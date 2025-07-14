@@ -1,0 +1,136 @@
+﻿@{
+    ViewBag.Title = "Đăng Ký Gói Tập";
+    Layout = "~/Views/Shared/_Home.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng Ký Gói Tập</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="~/Content/DkyGoiT.css" />
+</head>
+<body>
+
+    <!-- PHẦN CHỌN GÓI TẬP -->
+    <section class="package-section">
+        <h1 class="package-title">Chọn Gói Tập Của Bạn</h1>
+        <div class="package-options">
+            <div class="package-card">
+                <img src="~/Images/Goitap.jpg" alt="1 Tháng - GYM" class="package-img" />
+                <div class="package-content">
+                    <h3>1 Tháng</h3>
+                    <p class="price">16K/ngày</p>
+                    <p class="duration">Tổng: 480K</p>
+                    <button class="package-btn" data-target="#register-form">Chọn Gói</button>
+                </div>
+            </div>
+            <div class="package-card">
+                <img src="/Images/Goitap.jpg" alt="3 Tháng - Yoga" class="package-img" />
+                <div class="package-content">
+                    <h3>3 Tháng</h3>
+                    <p class="price">14K/ngày</p>
+                    <p class="duration">Tổng: 1.260K</p>
+                    <button class="package-btn" data-target="#register-form">Chọn Gói</button>
+                </div>
+            </div>
+            <div class="package-card">
+                <img src="/Images/Goitap.jpg" alt="6 Tháng - Group X" class="package-img" />
+                <div class="package-content">
+                    <h3>6 Tháng</h3>
+                    <p class="price">12K/ngày</p>
+                    <p class="duration">Tổng: 2.160K</p>
+                    <button class="package-btn" data-target="#register-form">Chọn Gói</button>
+                </div>
+            </div>
+            <div class="package-card">
+                <img src="/Images/Goitap.jpg" alt="9 Tháng - Kickboxing" class="package-img" />
+                <div class="package-content">
+                    <h3>9 Tháng</h3>
+                    <p class="price">10K/ngày</p>
+                    <p class="duration">Tổng: 2.700K</p>
+                    <button class="package-btn" data-target="#register-form">Chọn Gói</button>
+                </div>
+            </div>
+            <div class="package-card">
+                <img src="/Images/Goitap.jpg" alt="12 Tháng - Swimming" class="package-img" />
+                <div class="package-content">
+                    <h3>12 Tháng</h3>
+                    <p class="price">8K/ngày</p>
+                    <p class="duration">Tổng: 2.880K</p>
+                    <button class="package-btn" data-target="#register-form">Chọn Gói</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PHẦN ĐĂNG KÝ -->
+    <div class="container" id="register-form">
+        <!-- FORM BÊN TRÁI -->
+        <div class="form-container">
+            <form action="@Url.Action("RegisterPackage", "Account")" method="post">
+                <div class="form-group">
+                    <label for="fullname">Họ và Tên <span class="required">*</span></label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên" required class="form-input" />
+                </div>
+                <div class="form-group">
+                    <label for="phone">Số Điện Thoại <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại" required class="form-input" />
+                </div>
+                <div class="form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Nhập email" required class="form-input" />
+                </div>
+                <div class="form-group">
+                    <label>Dịch Vụ Quan Tâm</label>
+                    <div class="checkbox-group">
+                        <label><input type="checkbox" name="service" value="gym" /> GYM</label>
+                        <label><input type="checkbox" name="service" value="yoga" /> YOGA</label>
+                        <label><input type="checkbox" name="service" value="groupx" /> GROUP X</label>
+                        <label><input type="checkbox" name="service" value="kickboxing" /> Kick Boxing</label>
+                        <label><input type="checkbox" name="service" value="veboi" /> Vẽ Bơi</label>
+                        <label><input type="checkbox" name="service" value="khoahocboi" /> Khóa Học Bơi</label>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>Cơ Sở Gần Nhất</label>
+                    <div class="checkbox-group column">
+                        <label><input type="checkbox" name="branch" value="cs2" /> Cơ sở 2: Tòa M1, Vinhomes Metropolis, Số 29 Liễu Giai, Ba Đình, Hà Nội</label>
+                        <label><input type="checkbox" name="branch" value="cs3" /> Cơ sở 3: Tòa The Zei, Số 8 Lê Đức Thọ, Mỹ Đình, Nam Từ Liêm, Hà Nội</label>
+                        <label><input type="checkbox" name="branch" value="cs6" /> Cơ sở 6: Số 677 Lạc Long Quân, Phú Thượng, Tây Hồ, Hà Nội</label>
+                        <label><input type="checkbox" name="branch" value="cs7" /> Cơ sở 7: Số 52 Nguyễn Vĩnh Bảo, Yên Hòa, Cầu Giấy, Hà Nội</label>
+                    </div>
+                </div>
+                <button type="submit" class="form-button">Đăng Ký Ngay</button>
+            </form>
+        </div>
+
+        <!-- ẢNH BÊN PHẢI -->
+        <div class="image-container">
+            <div class="overlay-text">
+                Đưa cuộc sống của bạn lên một tầm cao mới<br />
+                với kickboxing tại King Fitness
+            </div>
+        </div>
+    </div>
+
+    <!-- SECTION BANNER THỨ HAI -->
+    <section class="hero-second">
+        <div class="hero-content">
+            <p class="small-title">Train with the best</p>
+            <h2 class="main-title">
+                TẬP LUYỆN.<br />
+                LÀ CHÌA KHÓA CỦA LỐI SỐNG LÀNH MẠNH.
+            </h2>
+            <form action="@Url.Action("DangNhap", "Home")" method="post">
+                <button class="cta-btn">Tham Gia Ngay</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- MAIN JS -->
+    <script src="~/Scripts/DkyGoiTap.js"></script>
+</body>
+</html>

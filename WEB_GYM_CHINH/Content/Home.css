@@ -1,0 +1,112 @@
+﻿/* Custom styles for THE KING GYM */
+body {
+    background: #1a1a1a; /* Tông màu tối phù hợp đêm khuya 12:05 AM */
+    color: #fff;
+}
+
+.navbar {
+    background: linear-gradient(90deg, #111, #1a1a1a);
+    padding: 15px 40px;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #ffca28;
+    transition: color 0.3s;
+}
+
+    .logo:hover {
+        color: #ffd54f;
+    }
+
+.nav-link {
+    font-size: 1.1rem;
+    transition: color 0.3s, background 0.3s;
+}
+
+    .nav-link:hover {
+        color: #ffca28 !important;
+        background: rgba(255, 202, 40, 0.1);
+        border-radius: 5px;
+    }
+
+.carousel-item img {
+    object-fit: cover;
+    max-height: 500px;
+}
+
+.carousel-caption {
+    background: rgba(0, 0, 0, 0.7);
+    border-radius: 10px;
+}
+
+.btn-warning {
+    background-color: #ffca28;
+    border-color: #ffca28;
+}
+
+    .btn-warning:hover {
+        background-color: #ffd54f;
+        border-color: #ffd54f;
+    }
+
+.card {
+    border: none;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 20px rgba(255, 202, 40, 0.3);
+    }
+
+.course-card img {
+    cursor: pointer;
+    transition: filter 0.3s;
+}
+
+    .course-card img:hover {
+        filter: brightness(110%);
+    }
+
+.modal-content {
+    border: 2px solid #ffca28;
+}
+
+#trainerSlider {
+    overflow: hidden;
+}
+
+.hvl-slides {
+    transition: transform 0.5s ease;
+}
+
+.prev-trainer, .next-trainer {
+    margin: 0 10px;
+}
+
+#countdown-card {
+    font-weight: bold;
+}
+
+#timer {
+    color: #ffca28;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .navbar-nav {
+        background: #1a1a1a;
+        padding: 10px;
+        border-radius: 5px;
+    }
+
+    .carousel-caption h1 {
+        font-size: 1.5rem;
+    }
+
+    .row.g-4 > * {
+        flex: 0 0 100%;
+    }
+}

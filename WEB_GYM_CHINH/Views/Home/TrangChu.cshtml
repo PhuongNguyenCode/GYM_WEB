@@ -1,0 +1,289 @@
+﻿@{
+    ViewBag.Title = "TrangChu";
+    Layout = "~/Views/Shared/_Home.cshtml";
+}
+<link href="~/Content/TrangChu.css" rel="stylesheet" />
+<main>
+    <!-- Banner Slider -->
+    <div id="bannerCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/Images/banner1.jpg" class="d-block w-100" alt="Banner 1" style="object-fit: cover; max-height: 500px; filter: brightness(70%);">
+                <div class="carousel-caption bg-dark bg-opacity-50 p-3 rounded">
+                    <h1 class="text-white text-shadow">CHÀO MỪNG ĐẾN THE KING GYM</h1>
+                    <a href="#register" class="btn-neon mt-3">Đăng ký ngay</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/Images/banner2.jpg" class="d-block w-100" alt="Banner 2" style="object-fit: cover; max-height: 500px; filter: brightness(70%);">
+                <div class="carousel-caption bg-dark bg-opacity-50 p-3 rounded">
+                    <h1 class="text-white text-shadow">CHÀO MỪNG ĐẾN THE KING GYM</h1>
+                    <a href="#register" class="btn-neon mt-3">Đăng ký ngay</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/Images/banner3.jpg" class="d-block w-100" alt="Banner 3" style="object-fit: cover; max-height: 500px; filter: brightness(70%);">
+                <div class="carousel-caption bg-dark bg-opacity-50 p-3 rounded">
+                    <h1 class="text-white text-shadow">CHÀO MỪNG ĐẾN THE KING GYM</h1>
+                    <a href="#register" class="btn-neon mt-3">Đăng ký ngay</a>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <img src="~/Images/banner4.jpg" class="d-block w-100" alt="Banner 4" style="object-fit: cover; max-height: 500px; filter: brightness(70%);">
+                <div class="carousel-caption bg-dark bg-opacity-50 p-3 rounded">
+                    <h1 class="text-white text-shadow">CHÀO MỪNG ĐẾN THE KING GYM</h1>
+                    <a href="#register" class="btn-neon mt-3">Đăng ký ngay</a>
+                </div>
+            </div>
+        </div>
+        <button class="carousel-control-prev neon-control" type="button" data-bs-target="#bannerCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next neon-control" type="button" data-bs-target="#bannerCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <!-- Giới thiệu -->
+    <section class="py-5 text-center" id="about" style="background: linear-gradient(135deg, rgba(57, 255, 20, 0.1), rgba(45, 45, 45, 0.9));">
+        <div class="container">
+            <h2 class="text-neon fw-bold">VỀ CHÚNG TÔI</h2>
+            <p class="lead mt-3 text-white">THE KING GYM là trung tâm thể hình hàng đầu với trang thiết bị hiện đại, đội ngũ huấn luyện viên chuyên nghiệp, và không gian tập luyện đẳng cấp. Hãy cùng chúng tôi chinh phục sức mạnh và sức khỏe!</p>
+            <a href="#about" class="btn-neon mt-3">Tìm hiểu thêm</a>
+        </div>
+    </section>
+
+    <!-- Ưu đãi -->
+    <section class="py-5 text-white" id="promo" style="background: linear-gradient(135deg, rgba(45, 45, 45, 0.9), rgba(57, 255, 20, 0.1));">
+        <div class="container">
+            <h2 class="text-center mb-4 text-neon-alt">ƯU ĐÃI ĐẶC BIỆT</h2>
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="promo-card bg-neon-card">
+                        <img src="~/Images/uudai.jpg" alt="Miễn phí tập thử 7 ngày" class="promo-img">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Miễn phí tập thử 7 ngày</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="promo-card bg-neon-card-alt">
+                        <img src="~/Images/uudai.jpg" alt="Giảm 20% cho học viên mới" class="promo-img">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Giảm 20% cho học viên mới</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="promo-card bg-neon-card">
+                        <img src="~/Images/uudai.jpg" alt="Tặng áo tập gói 6 tháng" class="promo-img">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Tặng áo tập gói 6 tháng</h5>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="promo-card bg-neon-card-alt" id="countdown-card">
+                        <img src="~/Images/uudai.jpg" alt="Ưu đãi hết hạn" class="promo-img">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Ưu đãi hết hạn trong: <span id="timer"></span></h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bộ môn -->
+    <section class="py-5" id="courses" style="background: linear-gradient(135deg, rgba(57, 255, 20, 0.1), rgba(45, 45, 45, 0.9));">
+        <div class="container">
+            <h2 class="text-center mb-4 text-neon">BỘ MÔN</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-neon course-card">
+                        <img src="~/Images/kickboxing.jpg" class="card-img-top" alt="Kick Boxing" data-modal="kickboxModal">
+                        <div class="card-body text-center">
+                            <h4 class="card-title text-neon-alt">KICK BOXING</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-neon course-card">
+                        <img src="~/Images/boxing.jpg" class="card-img-top" alt="Boxing" data-modal="boxingModal">
+                        <div class="card-body text-center">
+                            <h4 class="card-title text-neon-alt">BOXING</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-neon course-card">
+                        <img src="~/Images/muaythai.jpg" class="card-img-top" alt="Muay Thai" data-modal="muaythaiModal">
+                        <div class="card-body text-center">
+                            <h4 class="card-title text-neon-alt">MUAY THAI</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Huấn luyện viên -->
+    <section class="py-5 text-white" id="trainers" style="background: linear-gradient(135deg, rgba(45, 45, 45, 0.9), rgba(57, 255, 20, 0.1));">
+        <div class="container">
+            <h2 class="text-center mb-4 text-neon-alt">HUẤN LUYỆN VIÊN</h2>
+            <div class="row hvl-slides" id="trainerSlider">
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-neon course-card">
+                        <img src="~/Images/kickboxing.jpg" class="card-img-top" alt="Nguyên" data-modal="kickboxModal">
+                        <div class="card-body text-center">
+                            <h4 class="card-title text-neon">NGUYÊN</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-neon course-card">
+                        <img src="~/Images/boxing.jpg" class="card-img-top" alt="Khải" data-modal="boxingModal">
+                        <div class="card-body text-center">
+                            <h4 class="card-title text-neon">KHẢI</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card h-100 shadow-neon course-card">
+                        <img src="~/Images/muaythai.jpg" class="card-img-top" alt="Nghiêm" data-modal="muaythaiModal">
+                        <div class="card-body text-center">
+                            <h4 class="card-title text-neon">NGHIÊM</h4>
+                        </div>
+                    </div>
+                </div>
+                <!-- Thêm các huấn luyện viên khác nếu cần -->
+            </div>
+            <button class="btn-neon prev-trainer mt-3" onclick="prevTrainer()">❮</button>
+            <button class="btn-neon next-trainer mt-3" onclick="nextTrainer()">❯</button>
+        </div>
+    </section>
+
+    <!-- Đăng ký -->
+    <section class="py-5 text-white" id="register" style="background: linear-gradient(135deg, rgba(57, 255, 20, 0.1), rgba(45, 45, 45, 0.9));">
+        <div class="container">
+            <h2 class="text-center mb-4 text-neon">ĐĂNG KÝ NGAY</h2>
+            <p class="text-center mb-4">Nhận ưu đãi đặc biệt khi đăng ký trước 11:59 PM, 13/07/2025!</p>
+            <form class="row g-3 justify-content-center">
+                <div class="col-md-4 form-group">
+                    <label for="fullname">Họ và Tên <span class="required">*</span></label>
+                    <input type="text" id="fullname" name="fullname" placeholder="Nhập họ và tên" required class="form-input" />
+                </div>
+                <div class="col-md-4 form-group">
+                    <label for="email">Email <span class="required">*</span></label>
+                    <input type="email" id="email" name="email" placeholder="Nhập email" required class="form-input" />
+                </div>
+                <div class="col-md-2 form-group">
+                    <label for="phone">Số Điện Thoại <span class="required">*</span></label>
+                    <input type="tel" id="phone" name="phone" placeholder="Nhập số điện thoại" required class="form-input" />
+                </div>
+                <div class="col-md-2">
+                    <button type="submit" class="btn-neon w-100" style="margin-top: 32px;">Gửi</button>
+                </div>
+            </form>
+        </div>
+    </section>
+</main>
+
+<!-- Modal Templates -->
+<div id="kickboxModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white">
+            <div class="modal-header">
+                <h5 class="modal-title text-neon">KICK BOXING - NGUYÊN</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="~/Images/kickboxing.jpg" class="img-fluid mb-3" alt="Kick Boxing">
+                <p class="text-white">Với hơn 10 năm kinh nghiệm, HLV Nguyên mang đến các buổi tập năng lượng cao, tập trung vào kỹ thuật đấm và đá.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="boxingModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white">
+            <div class="modal-header">
+                <h5 class="modal-title text-neon">BOXING - KHẢI</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="~/Images/boxing.jpg" class="img-fluid mb-3" alt="Boxing">
+                <p class="text-white">HLV Khải chuyên về kỹ thuật đấm, giúp học viên tăng phản xạ và sức bền.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="muaythaiModal" class="modal fade" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content bg-dark text-white">
+            <div class="modal-header">
+                <h5 class="modal-title text-neon">MUAY THAI - NGHIÊM</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <img src="~/Images/muaythai.jpg" class="img-fluid mb-3" alt="Muay Thai">
+                <p class="text-white">HLV Nghiêm chuyên sâu về kỹ thuật chỏ và gối, nâng cao thể lực toàn diện.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    // Countdown Timer
+    function updateTimer() {
+        const countDownDate = new Date("July 13, 2025 23:59:59").getTime();
+        const now = new Date().getTime();
+        const distance = countDownDate - now;
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("timer").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+        if (distance < 0) {
+            document.getElementById("timer").innerHTML = "Hết hạn";
+        }
+    }
+    setInterval(updateTimer, 1000);
+
+    // Trainer Slider
+    let slideIndex = 0;
+    const slides = document.getElementsByClassName("hvl-slides")[0];
+    const totalSlides = slides.children.length;
+
+    function showSlides() {
+        if (slideIndex >= totalSlides) slideIndex = 0;
+        if (slideIndex < 0) slideIndex = totalSlides - 1;
+        slides.style.transform = `translateX(-${slideIndex * 33.33}%)`;
+    }
+
+    function nextTrainer() {
+        slideIndex++;
+        showSlides();
+    }
+
+    function prevTrainer() {
+        slideIndex--;
+        showSlides();
+    }
+
+    // Modal Trigger
+    document.querySelectorAll('[data-modal]').forEach(item => {
+        item.addEventListener('click', () => {
+            const modalId = item.getAttribute('data-modal');
+            const modal = new bootstrap.Modal(document.getElementById(modalId));
+            modal.show();
+        });
+    });
+</script>

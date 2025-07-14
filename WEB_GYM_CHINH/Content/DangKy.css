@@ -1,0 +1,338 @@
+﻿/*=============== GOOGLE FONTS ===============*/
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&display=swap");
+
+/*=============== BIẾN CSS ===============*/
+:root {
+    /*========== Màu sắc neon gradient ==========*/
+    --first-color: hsl(120, 100%, 50%); /* Xanh neon */
+    --first-color-alt: hsl(45, 100%, 50%); /* Vàng neon */
+    --title-color: hsl(0, 0%, 100%); /* Trắng */
+    --white-color: hsl(0, 0%, 100%); /* Trắng */
+    --text-color: hsl(0, 0%, 80%); /* Xám nhạt */
+    --body-color: hsl(0, 0%, 10%); /* Đen tối */
+    --container-color: rgba(26, 26, 26, 0.9); /* Nền mờ tối */
+    /*========== Phông chữ và kiểu chữ ==========*/
+    --body-font: "Montserrat", system-ui;
+    --big-font-size: 1.5rem;
+    --normal-font-size: .938rem;
+    --small-font-size: .813rem;
+    --tiny-font-size: .688rem;
+    /*========== Độ đậm chữ ==========*/
+    --font-regular: 400;
+    --font-medium: 500;
+    --font-semi-bold: 600;
+    /*========== Chỉ số z ==========*/
+    --z-tooltip: 10;
+    --z-fixed: 100;
+}
+
+/*========== Kích thước chữ khi màn hình lớn ==========*/
+@media screen and (min-width: 1150px) {
+    :root {
+        --big-font-size: 3rem;
+        --normal-font-size: 1rem;
+        --small-font-size: .875rem;
+        --tiny-font-size: .75rem;
+    }
+}
+
+/*=============== CÀI ĐẶT CƠ BẢN ===============*/
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body,
+input,
+button {
+    font-family: var(--body-font);
+    font-size: var(--normal-font-size);
+}
+
+body {
+    background-color: var(--body-color);
+    color: var(--text-color);
+    /* Loại bỏ overflow: hidden để cho phép cuộn */
+    position: relative;
+}
+
+input,
+button {
+    border: none;
+    outline: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/*=============== CLASS TÁI SỬ DỤNG ===============*/
+.container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+
+.grid {
+    display: grid;
+    gap: 1rem;
+}
+
+/*=============== ĐĂNG KÝ ===============*/
+.register {
+    position: relative;
+    min-height: 100vh; /* Thay height để cho phép cuộn */
+    align-items: center;
+    background: linear-gradient(135deg, rgba(57, 255, 20, 0.1), rgba(45, 45, 45, 0.9)); /* Gradient neon */
+    animation: neonPulse 5s infinite alternate; /* Hiệu ứng pulse */
+}
+
+.register__blob {
+    display: none;
+}
+
+.register__title {
+    font-size: var(--big-font-size);
+    color: var(--title-color);
+    text-align: center;
+    margin-bottom: 2rem;
+    text-shadow: 0 0 10px var(--first-color); /* Neon effect */
+}
+
+.register__box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: var(--container-color);
+    border-radius: 1rem;
+    border: 2px solid rgba(57, 255, 20, 0.5); /* Viền neon */
+    box-shadow: 0 0 15px rgba(57, 255, 20, 0.3); /* Bóng neon */
+}
+
+.register__input {
+    background: none;
+    width: 100%;
+    padding: 1.5rem 2.5rem 1.5rem 1.25rem;
+    font-weight: var(--font-semi-bold);
+    border: 3px solid transparent;
+    border-radius: 1rem;
+    z-index: 1;
+    transition: border-color .4s, box-shadow .4s;
+    color: var(--white-color);
+}
+
+    .register__input:autofill {
+        transition: background-color 6000s, color 6000s;
+    }
+
+.register__label {
+    position: absolute;
+    left: 1.25rem;
+    font-weight: var(--font-semi-bold);
+    color: var(--text-color);
+    transition: transform .4s, font-size .4s, color .4s;
+}
+
+.register__icon {
+    position: absolute;
+    right: 1rem;
+    font-size: 1.25rem;
+    color: var(--text-color);
+    transition: color .4s;
+}
+
+.register__password {
+    cursor: pointer;
+    z-index: 10;
+}
+
+.register__button {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    background: linear-gradient(45deg, var(--first-color), var(--first-color-alt)); /* Gradient neon */
+    color: var(--white-color);
+    font-weight: var(--font-semi-bold);
+    padding-block: 1.5rem;
+    border-radius: 4rem;
+    margin-block: 2rem;
+    cursor: pointer;
+    transition: background-color .4s, box-shadow .4s, transform .4s;
+    box-shadow: 0 0 10px var(--first-color);
+}
+
+    .register__button:hover {
+        background: linear-gradient(45deg, var(--first-color-alt), var(--first-color));
+        box-shadow: 0 0 20px var(--first-color-alt), 0 0 30px var(--first-color);
+        transform: translateY(-5px);
+    }
+
+.register__switch {
+    text-align: center;
+    font-size: var(--small-font-size);
+}
+
+.register__link {
+    color: var(--first-color);
+    font-weight: var(--font-semi-bold);
+    transition: color .4s, text-shadow .4s;
+}
+
+    .register__link:hover {
+        color: var(--first-color-alt);
+        text-shadow: 0 0 5px var(--first-color-alt);
+    }
+
+/* Khi focus vào input thì label di chuyển lên trên */
+.register__input:focus ~ .register__label {
+    transform: translateY(-12px);
+    font-size: var(--tiny-font-size);
+    color: var(--first-color);
+}
+
+.register__input:focus {
+    padding-block: 2rem 1rem;
+    border-color: var(--first-color);
+    box-shadow: 0 0 10px var(--first-color);
+}
+
+/* Giữ label ở trên nếu có nội dung */
+.register__input:not(:placeholder-shown).register__input:not(:focus) ~ .register__label {
+    transform: translateY(-12px);
+    font-size: var(--tiny-font-size);
+    color: var(--text-color);
+}
+
+.register__input:not(:placeholder-shown).register__input:not(:focus) {
+    padding-block: 2rem 1rem;
+}
+
+/* Màu khi focus */
+.register__input:focus {
+    border-color: var(--first-color);
+}
+
+    .register__input:focus ~ .register__label,
+    .register__input:focus ~ .register__icon {
+        color: var(--first-color);
+    }
+
+/*=============== BREAKPOINTS - ĐIỂM DỪNG ===============*/
+/* Cho màn hình nhỏ */
+@media screen and (max-width: 320px) {
+    .container {
+        margin-inline: 1rem;
+    }
+}
+
+/* Cho màn hình trung bình */
+@media screen and (min-width: 540px) {
+    .register__area {
+        width: 380px;
+        margin-inline: auto;
+    }
+}
+
+@media screen and (min-width: 350px) and (max-height: 600px) {
+    .register {
+        min-height: 760px; /* Thay height để cho phép cuộn */
+    }
+}
+
+/* Cho màn hình lớn */
+@media screen and (min-width: 1150px) {
+    .container {
+        margin-inline: auto;
+    }
+
+    .register__area {
+        width: 460px;
+        margin: initial;
+    }
+
+    .register__title {
+        text-align: initial;
+        margin-bottom: 3rem;
+    }
+
+    .register__button {
+        margin-bottom: 3rem;
+    }
+
+    .register__group {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .register__blob {
+        display: block;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    .register__img {
+        transform: translate(0rem, 0rem);
+    }
+}
+
+/*=============== NAVIGATION BAR =============== */
+header {
+    background-color: #000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--first-color); /* Xanh neon */
+}
+
+#navbar {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+    #navbar li a {
+        text-decoration: none;
+        color: var(--white-color);
+        font-weight: 600;
+        transition: color 0.3s;
+    }
+
+        #navbar li a.active,
+        #navbar li a:hover {
+            color: var(--first-color-alt); /* Vàng neon */
+        }
+
+body {
+    margin: 0;
+    padding-top: 70px; /* để không bị che bởi navbar fixed */
+}
+
+/* Hiệu ứng neon pulse */
+@keyframes neonPulse {
+    0% {
+        opacity: 0.3;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
