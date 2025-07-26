@@ -36,5 +36,6 @@ namespace WEB_GYM_CHINH.Models
         public virtual DbSet<PHONGTAP> PHONGTAPs { get; set; }
         public virtual DbSet<THANHTOAN> THANHTOANs { get; set; }
         public virtual DbSet<THANHVIEN> THANHVIENs { get; set; }
+        public virtual DbSet<DK_THANHVIEN> DK_THANHVIEN { get; set; }
     }
 }

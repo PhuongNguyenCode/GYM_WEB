@@ -1,0 +1,165 @@
+﻿@model WEB_GYM_CHINH.Models.DK_THANHVIEN
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Home.cshtml";
+}
+
+<!-- Include Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-primary fw-bold text-shadow"><i class="fas fa-edit me-2"></i>Sửa Thông Tin Thành Viên</h2>
+
+    <div class="card shadow-lg border-0 rounded-3">
+        <div class="card-body p-4">
+            @using (Html.BeginForm("Edit", "DK_THANHVIEN", FormMethod.Post, new { @enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.MaDKTV)
+
+                <div class="form-horizontal">
+                    <h4 class="mb-3">Thông Tin Thành Viên</h4>
+                    <hr class="mb-4" />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger mb-3" })
+
+                    <div class="mb-4">
+                        @Html.LabelFor(model => model.HoTen, htmlAttributes: new { @class = "form-label fw-bold" })
+                        @Html.EditorFor(model => model.HoTen, new { htmlAttributes = new { @class = "form-control form-control-lg shadow-sm", placeholder = "Nhập họ và tên" } })
+                        @Html.ValidationMessageFor(model => model.HoTen, "", new { @class = "text-danger mt-1" })
+                    </div>
+
+                    <div class="mb-4">
+                        @Html.LabelFor(model => model.SDT, htmlAttributes: new { @class = "form-label fw-bold" })
+                        @Html.EditorFor(model => model.SDT, new { htmlAttributes = new { @class = "form-control form-control-lg shadow-sm", placeholder = "Nhập số điện thoại", type = "tel" } })
+                        @Html.ValidationMessageFor(model => model.SDT, "", new { @class = "text-danger mt-1" })
+                    </div>
+
+                    <div class="mb-4">
+                        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "form-label fw-bold" })
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control form-control-lg shadow-sm", placeholder = "Nhập email", type = "email" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger mt-1" })
+                    </div>
+
+                    <div class="mb-4">
+                        @Html.LabelFor(model => model.NgaySinh, htmlAttributes: new { @class = "form-label fw-bold" })
+                        @Html.EditorFor(model => model.NgaySinh, new { htmlAttributes = new { @class = "form-control form-control-lg shadow-sm", type = "date" } })
+                        @Html.ValidationMessageFor(model => model.NgaySinh, "", new { @class = "text-danger mt-1" })
+                    </div>
+
+                    <div class="mb-4">
+                        @Html.LabelFor(model => model.GioiTinh, htmlAttributes: new { @class = "form-label fw-bold" })
+                        @Html.DropDownListFor(model => model.GioiTinh, new SelectList(new[] { new { Value = "Nam", Text = "Nam" }, new { Value = "Nữ", Text = "Nữ" } }, "Value", "Text", Model.GioiTinh), "Chọn giới tính", new { @class = "form-control form-control-lg shadow-sm" })
+                        @Html.ValidationMessageFor(model => model.GioiTinh, "", new { @class = "text-danger mt-1" })
+                    </div>
+
+                    <div class="mb-4">
+                        @Html.LabelFor(model => model.MaGoiTap, "Gói Tập", htmlAttributes: new { @class = "form-label fw-bold" })
+                        @Html.DropDownListFor(model => model.MaGoiTap, ViewBag.MaGoiTap as SelectList, "Chọn gói tập", new { @class = "form-control form-control-lg shadow-sm" })
+                        @Html.ValidationMessageFor(model => model.MaGoiTap, "", new { @class = "text-danger mt-1" })
+                    </div>
+
+                    <div class="mb-4">
+                        @Html.LabelFor(model => model.NgayBatDau, htmlAttributes: new { @class = "form-label fw-bold" })
+                        @Html.EditorFor(model => model.NgayBatDau, new { htmlAttributes = new { @class = "form-control form-control-lg shadow-sm", type = "date" } })
+                        @Html.ValidationMessageFor(model => model.NgayBatDau, "", new { @class = "text-danger mt-1" })
+                    </div>
+
+                    <div class="mb-4">
+                        @Html.LabelFor(model => model.NgayKetThuc, htmlAttributes: new { @class = "form-label fw-bold" })
+                        @Html.EditorFor(model => model.NgayKetThuc, new { htmlAttributes = new { @class = "form-control form-control-lg shadow-sm", type = "date" } })
+                        @Html.ValidationMessageFor(model => model.NgayKetThuc, "", new { @class = "text-danger mt-1" })
+                    </div>
+
+                    <div class="mb-4">
+                        @Html.LabelFor(model => model.SoBuoi, htmlAttributes: new { @class = "form-label fw-bold" })
+                        @Html.EditorFor(model => model.SoBuoi, new { htmlAttributes = new { @class = "form-control form-control-lg shadow-sm", type = "number", min = "1" } })
+                        @Html.ValidationMessageFor(model => model.SoBuoi, "", new { @class = "text-danger mt-1" })
+                    </div>
+
+                    <div class="mb-4">
+                        @Html.LabelFor(model => model.DonGia, htmlAttributes: new { @class = "form-label fw-bold" })
+                        @Html.EditorFor(model => model.DonGia, new { htmlAttributes = new { @class = "form-control form-control-lg shadow-sm", type = "number", step = "0.01" } })
+                        @Html.ValidationMessageFor(model => model.DonGia, "", new { @class = "text-danger mt-1" })
+                    </div>
+
+                    <div class="mb-4">
+                        @Html.LabelFor(model => model.ThanhToan, htmlAttributes: new { @class = "form-label fw-bold" })
+                        @Html.DropDownListFor(model => model.ThanhToan, new SelectList(new[] { new { Value = "Đã thanh toán", Text = "Đã thanh toán" }, new { Value = "Chưa thanh toán", Text = "Chưa thanh toán" } }, "Value", "Text", Model.ThanhToan), "Chọn trạng thái thanh toán", new { @class = "form-control form-control-lg shadow-sm" })
+                        @Html.ValidationMessageFor(model => model.ThanhToan, "", new { @class = "text-danger mt-1" })
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-2">
+                        <a href="@Url.Action("Index", "DK_THANHVIEN")" class="btn btn-secondary btn-lg btn-shadow btn-hover"><i class="fas fa-arrow-left me-2"></i>Quay Lại</a>
+                        <button type="submit" class="btn btn-success btn-lg btn-shadow btn-hover"><i class="fas fa-save me-2"></i>Lưu</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Text shadow for header */
+    .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Enhanced card shadow */
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 0.5rem;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+        }
+
+    /* Input and button shadow and hover effects */
+    .form-control, .form-select {
+        transition: all 0.3s ease;
+    }
+
+        .form-control:focus, .form-select:focus {
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+            border-color: #007bff;
+        }
+
+    .btn-shadow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-hover {
+        transition: all 0.3s ease;
+    }
+
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            filter: brightness(1.1);
+        }
+
+    /* Form label and input styling */
+    .form-label {
+        font-size: 1.1rem;
+        color: #343a40;
+    }
+
+    .form-control-lg, .form-select {
+        border-radius: 0.4rem;
+    }
+</style>
+
+<script>
+    // Smooth hover effect for buttons
+    document.querySelectorAll('.btn-hover').forEach(button => {
+        button.addEventListener('mouseover', () => {
+            button.style.transition = 'all 0.3s ease';
+        });
+        button.addEventListener('mouseout', () => {
+            button.style.transform = 'translateY(0)';
+            button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+        });
+    });
+</script>

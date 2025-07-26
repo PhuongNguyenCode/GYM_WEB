@@ -64,6 +64,7 @@
     <Property Name="GiaTien" Type="Decimal" Precision="10" Scale="2" />
     <NavigationProperty Name="DANGKYGOIs" Relationship="Self.FK__DANGKYGOI__MaGoi__48CFD27E" FromRole="GOITAP" ToRole="DANGKYGOI" />
     <NavigationProperty Name="LOAIGOITAP" Relationship="Self.FK__GOITAP__MaLoaiGo__44FF419A" FromRole="GOITAP" ToRole="LOAIGOITAP" />
+    <NavigationProperty Name="DK_THANHVIEN" Relationship="DBWebGymModel.FK__DK_THANHV__MaGoi__6FE99F9F" FromRole="GOITAP" ToRole="DK_THANHVIEN" />
   </EntityType>
   <EntityType Name="LICHTAP">
     <Key>
@@ -296,5 +297,40 @@
       <End Role="PHONGTAP" EntitySet="PHONGTAPs" />
       <End Role="THANHVIEN" EntitySet="THANHVIENs" />
     </AssociationSet>
+    <EntitySet Name="DK_THANHVIEN" EntityType="DBWebGymModel.DK_THANHVIEN" />
+    <AssociationSet Name="FK__DK_THANHV__MaGoi__6FE99F9F" Association="DBWebGymModel.FK__DK_THANHV__MaGoi__6FE99F9F">
+      <End Role="GOITAP" EntitySet="GOITAPs" />
+      <End Role="DK_THANHVIEN" EntitySet="DK_THANHVIEN" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="DK_THANHVIEN">
+    <Key>
+      <PropertyRef Name="MaDKTV" />
+    </Key>
+    <Property Name="HoTen" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="SDT" Type="String" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="NgaySinh" Type="DateTime" Precision="0" />
+    <Property Name="GioiTinh" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="MaGoiTap" Type="Int32" Nullable="false" />
+    <Property Name="NgayBatDau" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="NgayKetThuc" Type="DateTime" Precision="0" />
+    <Property Name="SoBuoi" Type="Int32" />
+    <Property Name="DonGia" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="ThanhToan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="GOITAP" Relationship="DBWebGymModel.FK__DK_THANHV__MaGoi__6FE99F9F" FromRole="DK_THANHVIEN" ToRole="GOITAP" />
+    <Property Name="MaDKTV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+  </EntityType>
+  <Association Name="FK__DK_THANHV__MaGoi__6FE99F9F">
+    <End Type="DBWebGymModel.GOITAP" Role="GOITAP" Multiplicity="1" />
+    <End Type="DBWebGymModel.DK_THANHVIEN" Role="DK_THANHVIEN" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GOITAP">
+        <PropertyRef Name="MaGoiTap" />
+      </Principal>
+      <Dependent Role="DK_THANHVIEN">
+        <PropertyRef Name="MaGoiTap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

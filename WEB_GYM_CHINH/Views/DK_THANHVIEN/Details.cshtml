@@ -1,0 +1,118 @@
+﻿@model WEB_GYM_CHINH.Models.DK_THANHVIEN
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Home.cshtml";
+}
+
+<!-- Include Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-primary fw-bold text-shadow"><i class="fas fa-info-circle me-2"></i>Chi Tiết Thành Viên</h2>
+
+    <div class="card shadow-lg border-0 rounded-3">
+        <div class="card-body p-4">
+            <h4 class="mb-3">Thông Tin Thành Viên</h4>
+            <hr class="mb-4" />
+            <dl class="row">
+                <dt class="col-sm-3 fw-bold">@Html.DisplayNameFor(model => model.HoTen)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.HoTen)</dd>
+
+                <dt class="col-sm-3 fw-bold">@Html.DisplayNameFor(model => model.SDT)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.SDT)</dd>
+
+                <dt class="col-sm-3 fw-bold">@Html.DisplayNameFor(model => model.Email)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.Email)</dd>
+
+                <dt class="col-sm-3 fw-bold">@Html.DisplayNameFor(model => model.NgaySinh)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.NgaySinh)</dd>
+
+                <dt class="col-sm-3 fw-bold">@Html.DisplayNameFor(model => model.GioiTinh)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.GioiTinh)</dd>
+
+                <dt class="col-sm-3 fw-bold">@Html.DisplayNameFor(model => model.NgayBatDau)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.NgayBatDau)</dd>
+
+                <dt class="col-sm-3 fw-bold">@Html.DisplayNameFor(model => model.NgayKetThuc)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.NgayKetThuc)</dd>
+
+                <dt class="col-sm-3 fw-bold">@Html.DisplayNameFor(model => model.SoBuoi)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.SoBuoi)</dd>
+
+                <dt class="col-sm-3 fw-bold">@Html.DisplayNameFor(model => model.DonGia)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.DonGia)</dd>
+
+                <dt class="col-sm-3 fw-bold">@Html.DisplayNameFor(model => model.ThanhToan)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.ThanhToan)</dd>
+
+                <dt class="col-sm-3 fw-bold">@Html.DisplayNameFor(model => model.GOITAP.TenGoiTap)</dt>
+                <dd class="col-sm-9">@Html.DisplayFor(model => model.GOITAP.TenGoiTap)</dd>
+            </dl>
+            <div class="d-flex justify-content-end gap-2 mt-4">
+                <a href="@Url.Action("Edit", new { id = Model.MaDKTV })" class="btn btn-primary btn-lg btn-shadow btn-hover"><i class="fas fa-edit me-2"></i>Sửa</a>
+                <a href="@Url.Action("Index")" class="btn btn-secondary btn-lg btn-shadow btn-hover"><i class="fas fa-arrow-left me-2"></i>Quay Lại</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Text shadow for header */
+    .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Enhanced card shadow */
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 0.5rem;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+        }
+
+    /* Button shadow and hover effects */
+    .btn-shadow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-hover {
+        transition: all 0.3s ease;
+    }
+
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            filter: brightness(1.1);
+        }
+
+    /* Definition list styling */
+    .row dt, .row dd {
+        padding: 0.5rem 0;
+        border-bottom: 1px solid #e9ecef;
+    }
+
+        .row dt:last-child, .row dd:last-child {
+            border-bottom: none;
+        }
+
+    .row dt {
+        color: #343a40;
+    }
+</style>
+
+<script>
+    // Smooth hover effect for buttons
+    document.querySelectorAll('.btn-hover').forEach(button => {
+        button.addEventListener('mouseover', () => {
+            button.style.transition = 'all 0.3s ease';
+        });
+        button.addEventListener('mouseout', () => {
+            button.style.transform = 'translateY(0)';
+            button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+        });
+    });
+</script>

@@ -18,6 +18,7 @@ namespace WEB_GYM_CHINH.Models
         public GOITAP()
         {
             this.DANGKYGOIs = new HashSet<DANGKYGOI>();
+            this.DK_THANHVIEN = new HashSet<DK_THANHVIEN>();
         }
     
         public int MaGoiTap { get; set; }
@@ -30,5 +31,7 @@ namespace WEB_GYM_CHINH.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<DANGKYGOI> DANGKYGOIs { get; set; }
         public virtual LOAIGOITAP LOAIGOITAP { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<DK_THANHVIEN> DK_THANHVIEN { get; set; }
     }
 }

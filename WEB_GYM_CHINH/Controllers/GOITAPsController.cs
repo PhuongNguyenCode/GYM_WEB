@@ -36,7 +36,7 @@ namespace WEB_GYM_CHINH.Controllers
             }
             return View(gOITAP);
         }
-
+        [HttpGet]
         // GET: GOITAPs/Create
         public ActionResult Create()
         {

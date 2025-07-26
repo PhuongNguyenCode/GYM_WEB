@@ -25,6 +25,8 @@
         <AssociationConnector Association="DBWebGymModel.FK__LICHTAP__MaHLV__5629CD9C" ManuallyRouted="false" />
         <AssociationConnector Association="DBWebGymModel.FK__NHANVIEN__MaPhon__534D60F1" ManuallyRouted="false" />
         <AssociationConnector Association="DBWebGymModel.FK__THANHVIEN__MaPho__4222D4EF" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="DBWebGymModel.DK_THANHVIEN" Width="1.5" PointX="5.25" PointY="11.875" />
+        <AssociationConnector Association="DBWebGymModel.FK__DK_THANHV__MaGoi__6FE99F9F" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
