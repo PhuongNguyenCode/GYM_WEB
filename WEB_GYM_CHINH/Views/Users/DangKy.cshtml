@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Home.cshtml";
+}
+
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!--=============== REMIXICONS ===============-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.2.0/remixicon.css" />
+
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="~/Content/DangKy.css" />
+
+    <title>Đăng ký - Giao diện người dùng</title>
+</head>
+<body>
+  
+    <!--=============== GIAO DIỆN ===============-->
+    <div class="register container grid">
+        <div class="register__area">
+            <h1 class="register__title">Tạo tài khoản thành viên</h1>
+            @if (ViewBag.ErrorMessage != null)
+            {
+                <div class="alert alert-danger">@ViewBag.ErrorMessage</div>
+            }
+            @if (ViewBag.SuccessMessage != null)
+            {
+                <div class="alert alert-success">@ViewBag.SuccessMessage</div>
+            }
+            <form action="@Url.Action("DangKy", "Users")" method="post" class="register__form">
+                @Html.AntiForgeryToken()
+                <div class="register__content grid">
+                    <div class="register__box">
+                        <input type="text" id="hoTen" name="HoTen" required placeholder=" " class="register__input" />
+                        <label for="hoTen" class="register__label">Họ và Tên</label>
+                        <i class="ri-id-card-fill register__icon"></i>
+                    </div>
+
+                    <div class="register__box">
+                        <input type="date" id="ngaySinh" name="NgaySinh" placeholder=" " class="register__input" />
+                        <label for="ngaySinh" class="register__label">Ngày Sinh</label>
+                        <i class="ri-calendar-fill register__icon"></i>
+                    </div>
+
+                    <div class="register__box">
+                        <input type="tel" id="sdt" name="SDT" placeholder=" " class="register__input" />
+                        <label for="sdt" class="register__label">Số Điện Thoại</label>
+                        <i class="ri-phone-fill register__icon"></i>
+                    </div>
+
+                    <div class="register__box">
+                        <input type="email" id="email" name="Email" required placeholder=" " class="register__input" />
+                        <label for="email" class="register__label">Email</label>
+                        <i class="ri-mail-fill register__icon"></i>
+                    </div>
+
+                    <div class="register__box">
+                        <input type="password" id="password" name="MatKhau" required placeholder=" " class="register__input" />
+                        <label for="password" class="register__label">Mật Khẩu</label>
+                        <i class="ri-eye-off-fill register__icon register__password" id="registerPassword"></i>
+                    </div>
+
+                    <div class="register__box">
+                        <input type="password" id="confirmPassword" name="ConfirmPassword" required placeholder=" " class="register__input" />
+                        <label for="confirmPassword" class="register__label">Xác Nhận Mật Khẩu</label>
+                        <i class="ri-eye-off-fill register__icon register__password" id="confirmPasswordToggle"></i>
+                    </div>
+                   
+                </div>
+                <button type="submit" class="register__button">Tạo tài khoản</button>
+            </form>
+
+            <p class="register__switch">
+                Đã có tài khoản?
+                <a href="@Url.Action("DangNhap", "Users")" class="register__link">Đăng nhập</a>
+            </p>
+        </div>
+    </div>
+
+    <!--=============== MAIN JS ===============-->
+    <script src="~/Scripts/DangKy.js"></script>
+</body>
+</html>

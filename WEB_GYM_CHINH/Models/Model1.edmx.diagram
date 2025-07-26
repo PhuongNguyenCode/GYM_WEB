@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="f5f738f669fb4f318c477c0f410af6e4" Name="Diagram1">
+        <EntityTypeShape EntityType="DBWebGymModel.ADMIN" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBWebGymModel.CHONDICHVU" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBWebGymModel.CT_DANGKYGOI" Width="1.5" PointX="7.5" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBWebGymModel.DANGKYGOI" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBWebGymModel.GOITAP" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBWebGymModel.LICHTAP" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBWebGymModel.LOAIGOITAP" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBWebGymModel.NHANVIEN" Width="1.5" PointX="3" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBWebGymModel.PHONGTAP" Width="1.5" PointX="0.75" PointY="6.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBWebGymModel.THANHTOAN" Width="1.5" PointX="7.5" PointY="11.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBWebGymModel.THANHVIEN" Width="1.5" PointX="3" PointY="8.125" IsExpanded="true" />
+        <AssociationConnector Association="DBWebGymModel.FK_DichVu_DangKyGoi" ManuallyRouted="false" />
+        <AssociationConnector Association="DBWebGymModel.FK__CT_DANGKY__MaDan__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="DBWebGymModel.FK__DANGKYGOI__MaGoi__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="DBWebGymModel.FK__DANGKYGOI__MaTha__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="DBWebGymModel.FK__THANHTOAN__MaDan__4F7CD00D" ManuallyRouted="false" />
+        <AssociationConnector Association="DBWebGymModel.FK__GOITAP__MaLoaiGo__44FF419A" ManuallyRouted="false" />
+        <AssociationConnector Association="DBWebGymModel.FK__LICHTAP__MaHLV__5629CD9C" ManuallyRouted="false" />
+        <AssociationConnector Association="DBWebGymModel.FK__NHANVIEN__MaPhon__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="DBWebGymModel.FK__THANHVIEN__MaPho__4222D4EF" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

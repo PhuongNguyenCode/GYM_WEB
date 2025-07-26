@@ -1,13 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using WEB_GYM_CHINH.Models;
 
 namespace WEB_GYM_CHINH.Controllers
 {
     public class HomeController : Controller
     {
+        DBWebGymEntities db = new DBWebGymEntities();
+
         public ActionResult Index()
         {
             return View();
@@ -26,33 +29,40 @@ namespace WEB_GYM_CHINH.Controllers
 
             return View();
         }
+
         public ActionResult TrangChu()
-        { 
+        {
             return View();
         }
+
         public ActionResult VeChungToi()
         {
             return View();
         }
-        public ActionResult DangNhap()
-        {
-            return View();
-        }
-        public ActionResult DangKy()
-        {
-            return View();
-        }
+
         public ActionResult DkyGoiTap()
         {
-            return View();
+            var goiTapList = db.GOITAPs.ToList();
+            return View(goiTapList);
         }
+
         public ActionResult HTPhongTap()
         {
             return View();
         }
+
         public ActionResult LienHe()
         {
             return View();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            if (disposing)
+            {
+                db.Dispose();
+            }
+            base.Dispose(disposing);
         }
     }
 }

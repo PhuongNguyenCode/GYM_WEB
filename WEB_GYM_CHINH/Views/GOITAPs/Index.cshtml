@@ -1,0 +1,161 @@
+﻿@model IEnumerable<WEB_GYM_CHINH.Models.GOITAP>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Home.cshtml";
+}
+
+<!-- Include Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-primary fw-bold text-shadow"><i class="fas fa-dumbbell me-2"></i>Quản Lý Gói Tập</h2>
+
+    <div class="mb-3">
+        <a href="@Url.Action("Create")" class="btn btn-success btn-lg btn-shadow btn-hover"><i class="fas fa-plus-circle me-2"></i>Thêm Gói Tập Mới</a>
+    </div>
+
+    <div class="card shadow-lg border-0 rounded-3"> 
+        <div class="card-body p-4">
+            <div class="table-responsive">
+                <table class="table table-hover table-bordered align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th scope="col">@Html.DisplayNameFor(model => model.TenGoiTap)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.ImageGoi)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.MoTa)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.GiaTien)</th>
+                            <th scope="col">@Html.DisplayNameFor(model => model.LOAIGOITAP.TenLoaiGoi)</th>
+                            <th scope="col" class="text-center">Hành Động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr class="table-row-hover">
+                                <td>@Html.DisplayFor(modelItem => item.TenGoiTap)</td>
+                                <td>
+                                    @if (!string.IsNullOrEmpty(item.ImageGoi))
+                                    {
+                                        <img src="~/Images/@item.ImageGoi" alt="@item.TenGoiTap" class="img-thumbnail" style="max-width: 100px; max-height: 100px; object-fit: cover;" />
+                                    }
+                                    else
+                                    {
+                                        <span class="text-muted">Không có ảnh</span>
+                                    }
+                                </td>
+                                <td>@Html.DisplayFor(modelItem => item.MoTa)</td>
+                                <td>@Html.DisplayFor(modelItem => item.GiaTien)</td>
+                                <td>@Html.DisplayFor(modelItem => item.LOAIGOITAP.TenLoaiGoi)</td>
+                                <td class="text-center">
+                                    <a href="@Url.Action("Edit",new { id = item.MaGoiTap })" class="btn btn-sm btn-primary me-1 btn-shadow btn-hover" title="Sửa">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a href="@Url.Action("Details", new { id = item.MaGoiTap })" class="btn btn-sm btn-info me-1 btn-shadow btn-hover" title="Chi Tiết">
+                                        <i class="fas fa-info-circle"></i>
+                                    </a>
+                                    <a href="@Url.Action("Delete", new { id = item.MaGoiTap })" class="btn btn-sm btn-danger btn-shadow btn-hover" title="Xóa" onclick="return confirm('Bạn có chắc muốn xóa gói tập này?');">
+                                        <i class="fas fa-trash-alt"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Text shadow for header */
+    .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Enhanced card shadow */
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 0.5rem;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+        }
+
+    /* Button shadow and hover effects */
+    .btn-shadow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-hover {
+        transition: all 0.3s ease;
+    }
+
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            filter: brightness(1.1);
+        }
+
+    /* Table row hover effect */
+    .table-row-hover {
+        transition: background-color 0.2s ease;
+    }
+
+        .table-row-hover:hover {
+            background-color: rgba(0, 123, 255, 0.05);
+            transform: scale(1.01);
+        }
+
+    /* Table styles */
+    .table th, .table td {
+        vertical-align: middle;
+    }
+
+    .table-dark {
+        background-color: #343a40;
+    }
+
+    .table {
+        border-radius: 0.5rem;
+        overflow: hidden;
+    }
+
+    .btn-sm {
+        padding: 0.3rem 0.6rem;
+        font-size: 0.9rem;
+    }
+
+    /* Image thumbnail styling */
+    .img-thumbnail {
+        transition: transform 0.3s ease;
+    }
+
+        .img-thumbnail:hover {
+            transform: scale(1.1);
+        }
+</style>
+
+<script>
+    // Smooth hover effect for buttons and rows
+    document.querySelectorAll('.btn-hover').forEach(button => {
+        button.addEventListener('mouseover', () => {
+            button.style.transition = 'all 0.3s ease';
+        });
+        button.addEventListener('mouseout', () => {
+            button.style.transform = 'translateY(0)';
+            button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+        });
+    });
+
+    document.querySelectorAll('.table-row-hover').forEach(row => {
+        row.addEventListener('mouseover', () => {
+            row.style.transition = 'all 0.2s ease';
+        });
+        row.addEventListener('mouseout', () => {
+            row.style.transform = 'scale(1)';
+        });
+    });
+</script>

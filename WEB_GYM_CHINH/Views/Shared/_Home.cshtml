@@ -25,7 +25,14 @@
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("VeChungToi", "Home")">VỀ CHÚNG TÔI</a></li>
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("DkyGoiTap", "Home")">ĐĂNG KÝ GÓI TẬP</a></li>
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("LienHe", "Home")">LIÊN HỆ</a></li>
-                        <li class="nav-item"><a class="nav-link" href="@Url.Action("DangNhap", "Home")">ĐĂNG NHẬP</a></li>
+                        @if (Session["User"] != null)
+                        {
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("DangXuat", "Users")">ĐĂNG XUẤT</a></li>
+                        }
+                        else
+                        {
+                            <li class="nav-item"><a class="nav-link" href="@Url.Action("DangNhap", "Users")">ĐĂNG NHẬP</a></li>
+                        }
                     </ul>
                 </div>
             </div>
@@ -37,7 +44,7 @@
     </main>
 
     <footer class="bg-dark text-white text-center py-3 mt-5">
-        <p>&copy; 2025 THE KING GYM. All rights reserved.</p>
+        <p>© 2025 THE KING GYM. All rights reserved.</p>
         <div>
             <a href="#" class="text-white me-3"><i class="fab fa-facebook-f"></i></a>
             <a href="#" class="text-white me-3"><i class="fab fa-instagram"></i></a>

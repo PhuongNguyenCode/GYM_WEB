@@ -77,3 +77,7 @@ D:\WEB_GYM_CHINH\WEB_GYM_CHINH\obj\Debug\WEB_GYM_CHINH.csproj.CoreCompileInputs.
 D:\WEB_GYM_CHINH\WEB_GYM_CHINH\obj\Debug\WEB_GYM_.24077877.Up2Date
 D:\WEB_GYM_CHINH\WEB_GYM_CHINH\obj\Debug\WEB_GYM_CHINH.dll
 D:\WEB_GYM_CHINH\WEB_GYM_CHINH\obj\Debug\WEB_GYM_CHINH.pdb
+D:\WEB_GYM_CHINH\WEB_GYM_CHINH\bin\EntityFramework.dll
+D:\WEB_GYM_CHINH\WEB_GYM_CHINH\bin\EntityFramework.SqlServer.dll
+D:\WEB_GYM_CHINH\WEB_GYM_CHINH\bin\EntityFramework.xml
+D:\WEB_GYM_CHINH\WEB_GYM_CHINH\bin\EntityFramework.SqlServer.xml

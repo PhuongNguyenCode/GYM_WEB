@@ -1,0 +1,171 @@
+﻿@model WEB_GYM_CHINH.Models.GOITAP
+
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Home.cshtml";
+}
+
+<!-- Include Font Awesome for icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<div class="container mt-5">
+    <h2 class="mb-4 text-primary fw-bold text-shadow"><i class="fas fa-edit me-2"></i>Sửa Gói Tập</h2>
+
+    <div class="card shadow-lg border-0 rounded-3">
+        <div class="card-body p-4">
+            @using (Html.BeginForm("Edit", "GOITAPs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.MaGoiTap)
+
+                <div class="form-horizontal">
+                    <h4 class="mb-3">Thông Tin Gói Tập</h4>
+                    <hr class="mb-4" />
+                    @Html.ValidationSummary(true, "", new { @class = "text-danger mb-3" })
+
+                    <div class="mb-4">
+                        @Html.LabelFor(model => model.TenGoiTap, htmlAttributes: new { @class = "form-label fw-bold" })
+                        @Html.EditorFor(model => model.TenGoiTap, new { htmlAttributes = new { @class = "form-control form-control-lg shadow-sm", placeholder = "Nhập tên gói tập" } })
+                        @Html.ValidationMessageFor(model => model.TenGoiTap, "", new { @class = "text-danger mt-1" })
+                    </div>
+
+                    <div class="mb-4">
+                        @Html.LabelFor(model => model.ImageGoi, htmlAttributes: new { @class = "form-label fw-bold" })
+                        <div class="mb-2">
+                            @if (!string.IsNullOrEmpty(Model.ImageGoi))
+                            {
+                                <img src="~/Images/@Model.ImageGoi" alt="@Model.TenGoiTap" class="img-thumbnail mb-2" style="max-width: 200px; max-height: 200px; object-fit: cover;" />
+                            }
+                            else
+                            {
+                                <span class="text-muted">Không có ảnh</span>
+                            }
+                        </div>
+                        <input type="file" name="ImageGoi" id="ImageGoiFile" class="form-control form-control-lg shadow-sm" accept="image/*" />
+                        @Html.ValidationMessageFor(model => model.ImageGoi, "", new { @class = "text-danger mt-1" })
+                    </div>
+
+                    <div class="mb-4">
+                        @Html.LabelFor(model => model.MoTa, htmlAttributes: new { @class = "form-label fw-bold" })
+                        @Html.TextAreaFor(model => model.MoTa, new { @class = "form-control form-control-lg shadow-sm", placeholder = "Nhập mô tả gói tập", rows = "4" })
+                        @Html.ValidationMessageFor(model => model.MoTa, "", new { @class = "text-danger mt-1" })
+                    </div>
+
+                    <div class="mb-4">
+                        @Html.LabelFor(model => model.MaLoaiGoi, "Loại Gói Tập", htmlAttributes: new { @class = "form-label fw-bold" })
+                        @Html.DropDownListFor(model => model.MaLoaiGoi, ViewBag.MaLoaiGoi as SelectList, "Chọn loại gói tập", new { @class = "form-control form-control-lg shadow-sm" })
+                        @Html.ValidationMessageFor(model => model.MaLoaiGoi, "", new { @class = "text-danger mt-1" })
+                    </div>
+
+                    <div class="mb-4">
+                        @Html.LabelFor(model => model.GiaTien, htmlAttributes: new { @class = "form-label fw-bold" })
+                        @Html.EditorFor(model => model.GiaTien, new { htmlAttributes = new { @class = "form-control form-control-lg shadow-sm", placeholder = "Nhập giá tiền", type = "number", step = "0.01" } })
+                        @Html.ValidationMessageFor(model => model.GiaTien, "", new { @class = "text-danger mt-1" })
+                    </div>
+
+                    <div class="d-flex justify-content-end gap-2">
+                        <a href="@Url.Action("Index", "GOITAPs")" class="btn btn-secondary btn-lg btn-shadow btn-hover"><i class="fas fa-arrow-left me-2"></i>Quay Lại</a>
+                        <button type="submit" class="btn btn-success btn-lg btn-shadow btn-hover"><i class="fas fa-save me-2"></i>Lưu</button>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Text shadow for header */
+    .text-shadow {
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Enhanced card shadow */
+    .card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border-radius: 0.5rem;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15) !important;
+        }
+
+    /* Input and button shadow and hover effects */
+    .form-control, .form-select {
+        transition: all 0.3s ease;
+    }
+
+        .form-control:focus, .form-select:focus {
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
+            border-color: #007bff;
+        }
+
+    .btn-shadow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-hover {
+        transition: all 0.3s ease;
+    }
+
+        .btn-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            filter: brightness(1.1);
+        }
+
+    /* Form label and input styling */
+    .form-label {
+        font-size: 1.1rem;
+        color: #343a40;
+    }
+
+    .form-control-lg, .form-select {
+        border-radius: 0.4rem;
+    }
+
+    /* Image thumbnail styling */
+    .img-thumbnail {
+        transition: transform 0.3s ease;
+    }
+
+        .img-thumbnail:hover {
+            transform: scale(1.1);
+        }
+</style>
+
+<script>
+    // Smooth hover effect for buttons
+    document.querySelectorAll('.btn-hover').forEach(button => {
+        button.addEventListener('mouseover', () => {
+            button.style.transition = 'all 0.3s ease';
+        });
+        button.addEventListener('mouseout', () => {
+            button.style.transform = 'translateY(0)';
+            button.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+        });
+    });
+
+    // Image preview on file selection
+    document.getElementById('ImageGoiFile').addEventListener('change', function (event) {
+        const file = event.target.files[0];
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function (e) {
+                const imgElement = document.querySelector('.img-thumbnail');
+                if (imgElement) {
+                    imgElement.src = e.target.result;
+                } else {
+                    const newImg = document.createElement('img');
+                    newImg.src = e.target.result;
+                    newImg.className = 'img-thumbnail mb-2';
+                    newImg.style.maxWidth = '200px';
+                    newImg.style.maxHeight = '200px';
+                    newImg.style.objectFit = 'cover';
+                    event.target.parentNode.insertBefore(newImg, event.target);
+                }
+            };
+            reader.readAsDataURL(file);
+        }
+    });
+</script>
