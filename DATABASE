@@ -115,6 +115,5 @@ CREATE TABLE CHONDICHVU (
     TrangThai NVARCHAR(20) DEFAULT N'Hoạt động'
     CONSTRAINT FK_DichVu_DangKyGoi FOREIGN KEY (MaDangKy) REFERENCES DANGKYGOI(MaDangKy)
 );
-INSERT INTO GOITAP (TenGoiTap, ImageGoi, MoTa, MaLoaiGoi, GiaTien)
-VALUES (N'Gói Tập 1 Tháng', N'Goitap.jpg', N'Tập luyện cơ bản trong 1 tháng', 1, 500000);
-select * from THANHVIEN
+
+
