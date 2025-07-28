@@ -138,3 +138,36 @@ CREATE TABLE CHAMCONG (
     CONSTRAINT FK_CHAMCONG_DK_THANHVIEN 
         FOREIGN KEY (MaDKTV) REFERENCES DK_THANHVIEN(MaDKTV)
 );
+
+CREATE TABLE BAOCAO_THONGKE (
+    MaBaoCao INT PRIMARY KEY IDENTITY(1,1),
+    NgayBaoCao DATE DEFAULT GETDATE(),         -- Ngày lập báo cáo
+
+    TongSoThanhVien INT DEFAULT 0,             -- Tổng số thành viên
+    TongSoGoiTapDangKy INT DEFAULT 0,          -- Số lượng gói tập đã được đăng ký
+    TongSoBuoiTap INT DEFAULT 0,               -- Tổng số buổi đã tập (dựa vào bảng CHAMCONG)
+
+    TongDoanhThu DECIMAL(18,2) DEFAULT 0.0,    -- Tổng doanh thu từ thanh toán
+    SoLuongDichVu INT DEFAULT 0,               -- Số dịch vụ được chọn
+    SoNhanVien INT DEFAULT 0,                  -- Tổng số nhân viên
+
+    GhiChu NVARCHAR(255)                       -- Ghi chú nếu có
+);
+-- Chạy create table trước rồi chạy phần insert này
+INSERT INTO BAOCAO_THONGKE (
+    TongSoThanhVien,
+    TongSoGoiTapDangKy,
+    TongSoBuoiTap,
+    TongDoanhThu,
+    SoLuongDichVu,
+    SoNhanVien,
+    GhiChu
+)
+SELECT
+    (SELECT COUNT(*) FROM DK_THANHVIEN),      -- Tổng số thành viên từ bảng DK_THANHVIEN
+    (SELECT COUNT(DISTINCT MaGoiTap) FROM DK_THANHVIEN), -- Số gói tập đã được đăng ký (đã có người chọn)
+    (SELECT COUNT(*) FROM CHAMCONG),          -- Tổng số buổi tập từ bảng CHAMCONG
+    (SELECT ISNULL(SUM(DonGia), 0) FROM DK_THANHVIEN),   -- Tổng doanh thu từ ĐK gói
+    (SELECT COUNT(*) FROM CHONDICHVU),        -- Tổng số dịch vụ được chọn
+    (SELECT COUNT(*) FROM NHANVIEN),          -- Tổng số nhân viên
+    N'Báo cáo ngày ' + CONVERT(NVARCHAR, GETDATE(), 103)
