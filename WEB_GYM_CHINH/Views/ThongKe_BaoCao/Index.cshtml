@@ -1,0 +1,30 @@
+﻿@model WEB_GYM_CHINH.Models.ThongKe_BaoCaoViewModel
+@{
+    ViewBag.Title = "Thống kê báo cáo";
+}
+
+<h2>Thống kê báo cáo</h2>
+
+<form method="get" action="@Url.Action("Index")" class="form-inline mb-3">
+    <label class="mr-2">Loại thống kê:</label>
+    <select name="filterType" class="form-control mr-2">
+        <option value="ngay" selected>Theo ngày</option>
+        <option value="thang">Theo tháng</option>
+        <option value="quy">Theo quý</option>
+        <option value="nam">Theo năm</option>
+    </select>
+
+    <input type="submit" value="Lọc" class="btn btn-primary" />
+    <a href="@Url.Action("ExportToExcel", new { filterType = Request["filterType"], fromDate = Request["fromDate"], toDate = Request["toDate"] })" class="btn btn-success ml-2">Xuất ra Excel</a>
+</form>
+
+<table class="table table-bordered">
+    <tr><th>Tổng số thành viên</th><td>@Model.SoThanhVien</td></tr>
+    <tr><th>Số gói tập đăng ký</th><td>@Model.SoGoiTapDangKy</td></tr>
+    <tr><th>Số buổi tập</th><td>@Model.SoBuoiTap</td></tr>
+    <tr><th>Tổng doanh thu</th><td>@Model.TongDoanhThu.ToString("N0") VNĐ</td></tr>
+    <tr><th>Số lượng dịch vụ</th><td>@Model.SoLuongDichVu</td></tr>
+    <tr><th>Số nhân viên</th><td>@Model.SoNhanVien</td></tr>
+    <tr><th>Ghi chú</th><td>@Model.GhiChu</td></tr>
+    <tr><th>Ngày báo cáo</th><td>@Model.NgayBaoCao.ToString("dd/MM/yyyy HH:mm")</td></tr>
+</table>
