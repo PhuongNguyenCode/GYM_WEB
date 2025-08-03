@@ -1,0 +1,40 @@
+﻿@model WEB_GYM_CHINH.Models.CHAMCONG
+
+@{
+    ViewBag.Title = "Chấm công";
+    Layout = "~/Views/Shared/_Home.cshtml";
+}
+
+<h2>Điểm danh thành viên</h2>
+
+@if (!ViewData.ModelState.IsValid)
+{
+    <div class="text-danger">
+        @foreach (var modelError in ViewData.ModelState.Values.SelectMany(v => v.Errors))
+        {
+            <p>@modelError.ErrorMessage</p>
+        }
+    </div>
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div class="form-group">
+        @Html.LabelFor(model => model.MaDKTV, "Chọn gói tập")
+        @Html.DropDownList("MaDKTV", null, "-- Chọn gói tập --", new { @class = "form-control" })
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.NgayTap)
+        @Html.TextBoxFor(model => model.NgayTap, new { @type = "date", @class = "form-control" })
+    </div>
+
+    <button type="submit" class="btn btn-primary">Điểm danh</button>
+}
+@if (TempData["SuccessMessage"] != null)
+{
+    <div class="alert alert-success">
+        @TempData["SuccessMessage"]
+    </div>
+}

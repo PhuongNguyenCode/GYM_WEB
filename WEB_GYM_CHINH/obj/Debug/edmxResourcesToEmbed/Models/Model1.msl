@@ -152,5 +152,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="BAOCAO_THONGKE">
+      <EntityTypeMapping TypeName="DBWebGymModel.BAOCAO_THONGKE">
+        <MappingFragment StoreEntitySet="BAOCAO_THONGKE">
+          <ScalarProperty Name="GhiChu" ColumnName="GhiChu" />
+          <ScalarProperty Name="SoNhanVien" ColumnName="SoNhanVien" />
+          <ScalarProperty Name="SoLuongDichVu" ColumnName="SoLuongDichVu" />
+          <ScalarProperty Name="TongDoanhThu" ColumnName="TongDoanhThu" />
+          <ScalarProperty Name="TongSoBuoiTap" ColumnName="TongSoBuoiTap" />
+          <ScalarProperty Name="TongSoGoiTapDangKy" ColumnName="TongSoGoiTapDangKy" />
+          <ScalarProperty Name="TongSoThanhVien" ColumnName="TongSoThanhVien" />
+          <ScalarProperty Name="NgayBaoCao" ColumnName="NgayBaoCao" />
+          <ScalarProperty Name="MaBaoCao" ColumnName="MaBaoCao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CHAMCONGs">
+      <EntityTypeMapping TypeName="DBWebGymModel.CHAMCONG">
+        <MappingFragment StoreEntitySet="CHAMCONG">
+          <ScalarProperty Name="NgayTap" ColumnName="NgayTap" />
+          <ScalarProperty Name="MaDKTV" ColumnName="MaDKTV" />
+          <ScalarProperty Name="MaChamCong" ColumnName="MaChamCong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

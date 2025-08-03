@@ -3,32 +3,28 @@
   "WorkspaceRootPath": "D:\\WEB_GYM_CHINH\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|D:\\WEB_GYM_CHINH\\web_gym_chinh\\views\\dk_thanhvien\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|solutionrelative:web_gym_chinh\\views\\dk_thanhvien\\details.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|d:\\web_gym_chinh\\web_gym_chinh\\views\\admin\\trangadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|solutionrelative:web_gym_chinh\\views\\admin\\trangadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|d:\\web_gym_chinh\\web_gym_chinh\\views\\dk_thanhvien\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|solutionrelative:web_gym_chinh\\views\\dk_thanhvien\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|d:\\web_gym_chinh\\web_gym_chinh\\views\\chamcong\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|solutionrelative:web_gym_chinh\\views\\chamcong\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|D:\\WEB_GYM_CHINH\\web_gym_chinh\\views\\dk_thanhvien\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|solutionrelative:web_gym_chinh\\views\\dk_thanhvien\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|d:\\web_gym_chinh\\web_gym_chinh\\controllers\\chamcongcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|solutionrelative:web_gym_chinh\\controllers\\chamcongcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|D:\\WEB_GYM_CHINH\\web_gym_chinh\\views\\dk_thanhvien\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|solutionrelative:web_gym_chinh\\views\\dk_thanhvien\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|d:\\web_gym_chinh\\web_gym_chinh\\controllers\\thongke_baocaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|solutionrelative:web_gym_chinh\\controllers\\thongke_baocaocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|D:\\WEB_GYM_CHINH\\web_gym_chinh\\controllers\\dk_thanhviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|solutionrelative:web_gym_chinh\\controllers\\dk_thanhviencontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|D:\\WEB_GYM_CHINH\\web_gym_chinh\\views\\dk_thanhvien\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|solutionrelative:web_gym_chinh\\views\\dk_thanhvien\\create.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|D:\\WEB_GYM_CHINH\\web_gym_chinh\\controllers\\goitapscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|solutionrelative:web_gym_chinh\\controllers\\goitapscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|d:\\web_gym_chinh\\web_gym_chinh\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|",
+      "RelativeMoniker": "D:0:0:{0D1D82BC-7507-44C9-A768-03D6BA903967}|WEB_GYM_CHINH\\WEB_GYM_CHINH.csproj|solutionrelative:web_gym_chinh\\models\\model1.edmx||{C99AEA30-8E36-4515-B76F-496F5A48A6AA}|"
     }
   ],
   "DocumentGroupContainers": [
@@ -38,71 +34,58 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Delete.cshtml",
-              "DocumentMoniker": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Delete.cshtml",
-              "RelativeDocumentMoniker": "WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Delete.cshtml",
-              "ToolTip": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Delete.cshtml",
-              "RelativeToolTip": "WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Delete.cshtml",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAHsAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T16:49:02.517Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Details.cshtml",
-              "DocumentMoniker": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Details.cshtml",
-              "RelativeDocumentMoniker": "WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Details.cshtml",
-              "ToolTip": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Details.cshtml",
-              "RelativeToolTip": "WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Details.cshtml",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAEYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T16:45:27.641Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Edit.cshtml",
-              "DocumentMoniker": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Edit.cshtml",
-              "RelativeDocumentMoniker": "WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Edit.cshtml",
-              "ToolTip": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Edit.cshtml",
-              "RelativeToolTip": "WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Edit.cshtml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABIAAAA1AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T16:24:38.849Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Index.cshtml",
-              "DocumentMoniker": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Index.cshtml",
-              "RelativeDocumentMoniker": "WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Index.cshtml",
-              "ToolTip": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Index.cshtml",
-              "RelativeToolTip": "WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Index.cshtml",
-              "ViewState": "AgIAADEAAAAAAAAAAAAAADsAAABZAAAAAAAAAA==",
+              "DocumentMoniker": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Views\\CHAMCONG\\Index.cshtml",
+              "RelativeDocumentMoniker": "WEB_GYM_CHINH\\Views\\CHAMCONG\\Index.cshtml",
+              "ToolTip": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Views\\CHAMCONG\\Index.cshtml",
+              "RelativeToolTip": "WEB_GYM_CHINH\\Views\\CHAMCONG\\Index.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAACMAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T16:24:34.736Z",
+              "WhenOpened": "2025-08-01T16:10:35.416Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 5,
-              "Title": "Create.cshtml",
-              "DocumentMoniker": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Create.cshtml",
-              "RelativeDocumentMoniker": "WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Create.cshtml",
-              "ToolTip": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Create.cshtml",
-              "RelativeToolTip": "WEB_GYM_CHINH\\Views\\DK_THANHVIEN\\Create.cshtml",
-              "ViewState": "AgIAABsAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-07-26T16:05:42.305Z"
+              "Title": "Model1.edmx [Diagram1]",
+              "DocumentMoniker": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Models\\Model1.edmx",
+              "RelativeDocumentMoniker": "WEB_GYM_CHINH\\Models\\Model1.edmx",
+              "ToolTip": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Models\\Model1.edmx [Diagram1]",
+              "RelativeToolTip": "WEB_GYM_CHINH\\Models\\Model1.edmx [Diagram1]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001116|",
+              "WhenOpened": "2025-08-01T15:59:43.422Z",
+              "EditorCaption": " [Diagram1]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ThongKe_BaoCaoController.cs",
+              "DocumentMoniker": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Controllers\\ThongKe_BaoCaoController.cs",
+              "RelativeDocumentMoniker": "WEB_GYM_CHINH\\Controllers\\ThongKe_BaoCaoController.cs",
+              "ToolTip": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Controllers\\ThongKe_BaoCaoController.cs",
+              "RelativeToolTip": "WEB_GYM_CHINH\\Controllers\\ThongKe_BaoCaoController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-01T16:08:58.527Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CHAMCONGController.cs",
+              "DocumentMoniker": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Controllers\\CHAMCONGController.cs",
+              "RelativeDocumentMoniker": "WEB_GYM_CHINH\\Controllers\\CHAMCONGController.cs",
+              "ToolTip": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Controllers\\CHAMCONGController.cs",
+              "RelativeToolTip": "WEB_GYM_CHINH\\Controllers\\CHAMCONGController.cs",
+              "ViewState": "AgIAALIAAAAAAAAAAAAIwMQAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-01T16:10:07.647Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -112,22 +95,23 @@
               "RelativeDocumentMoniker": "WEB_GYM_CHINH\\Controllers\\DK_THANHVIENController.cs",
               "ToolTip": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Controllers\\DK_THANHVIENController.cs",
               "RelativeToolTip": "WEB_GYM_CHINH\\Controllers\\DK_THANHVIENController.cs",
-              "ViewState": "AgIAADIAAAAAAAAAAAAgwIQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAGEAAAAAAAAAAAA8wIQAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-26T15:55:53.973Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "GOITAPsController.cs",
-              "DocumentMoniker": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Controllers\\GOITAPsController.cs",
-              "RelativeDocumentMoniker": "WEB_GYM_CHINH\\Controllers\\GOITAPsController.cs",
-              "ToolTip": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Controllers\\GOITAPsController.cs",
-              "RelativeToolTip": "WEB_GYM_CHINH\\Controllers\\GOITAPsController.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAYwCYAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-24T00:38:47.995Z"
+              "DocumentIndex": 0,
+              "Title": "TrangAdmin.cshtml",
+              "DocumentMoniker": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Views\\Admin\\TrangAdmin.cshtml",
+              "RelativeDocumentMoniker": "WEB_GYM_CHINH\\Views\\Admin\\TrangAdmin.cshtml",
+              "ToolTip": "D:\\WEB_GYM_CHINH\\WEB_GYM_CHINH\\Views\\Admin\\TrangAdmin.cshtml",
+              "RelativeToolTip": "WEB_GYM_CHINH\\Views\\Admin\\TrangAdmin.cshtml",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAYwF0AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-01T15:38:53.476Z",
+              "EditorCaption": ""
             }
           ]
         }

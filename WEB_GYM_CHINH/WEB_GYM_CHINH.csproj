@@ -129,15 +129,24 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CHAMCONGController.cs" />
     <Compile Include="Controllers\DK_THANHVIENController.cs" />
     <Compile Include="Controllers\GOITAPsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoaiGoiTapController.cs" />
+    <Compile Include="Controllers\ThongKe_BaoCaoController.cs" />
     <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\ADMIN.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\BAOCAO_THONGKE.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CHAMCONG.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\CHONDICHVU.cs">
@@ -321,9 +330,12 @@
     <Content Include="Views\DK_THANHVIEN\Details.cshtml" />
     <Content Include="Views\DK_THANHVIEN\Edit.cshtml" />
     <Content Include="Views\DK_THANHVIEN\Index.cshtml" />
+    <Content Include="Views\Admin\TrangAdmin.cshtml" />
+    <Content Include="Views\CHAMCONG\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\ThongKe_BaoCao\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap.rtl.min.css.map" />

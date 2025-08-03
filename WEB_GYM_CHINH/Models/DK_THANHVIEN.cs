@@ -14,6 +14,12 @@ namespace WEB_GYM_CHINH.Models
     
     public partial class DK_THANHVIEN
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public DK_THANHVIEN()
+        {
+            this.CHAMCONGs = new HashSet<CHAMCONG>();
+        }
+    
         public string HoTen { get; set; }
         public string SDT { get; set; }
         public string Email { get; set; }
@@ -28,5 +34,7 @@ namespace WEB_GYM_CHINH.Models
         public int MaDKTV { get; set; }
     
         public virtual GOITAP GOITAP { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<CHAMCONG> CHAMCONGs { get; set; }
     }
 }

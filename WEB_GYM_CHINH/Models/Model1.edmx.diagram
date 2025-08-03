@@ -6,7 +6,7 @@
     <edmx:Diagrams>
       <Diagram DiagramId="f5f738f669fb4f318c477c0f410af6e4" Name="Diagram1">
         <EntityTypeShape EntityType="DBWebGymModel.ADMIN" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="DBWebGymModel.CHONDICHVU" Width="1.5" PointX="7.5" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DBWebGymModel.CHONDICHVU" Width="1.5" PointX="8.25" PointY="4.875" IsExpanded="true" />
         <EntityTypeShape EntityType="DBWebGymModel.CT_DANGKYGOI" Width="1.5" PointX="7.5" PointY="8.625" IsExpanded="true" />
         <EntityTypeShape EntityType="DBWebGymModel.DANGKYGOI" Width="1.5" PointX="5.25" PointY="8.125" IsExpanded="true" />
         <EntityTypeShape EntityType="DBWebGymModel.GOITAP" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
@@ -27,6 +27,9 @@
         <AssociationConnector Association="DBWebGymModel.FK__THANHVIEN__MaPho__4222D4EF" ManuallyRouted="false" />
         <EntityTypeShape EntityType="DBWebGymModel.DK_THANHVIEN" Width="1.5" PointX="5.25" PointY="11.875" />
         <AssociationConnector Association="DBWebGymModel.FK__DK_THANHV__MaGoi__6FE99F9F" />
+        <EntityTypeShape EntityType="DBWebGymModel.BAOCAO_THONGKE" Width="1.5" PointX="9.75" PointY="1.875" />
+        <EntityTypeShape EntityType="DBWebGymModel.CHAMCONG" Width="1.5" PointX="7.5" PointY="15.875" />
+        <AssociationConnector Association="DBWebGymModel.FK_CHAMCONG_DK_THANHVIEN" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

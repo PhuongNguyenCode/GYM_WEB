@@ -302,6 +302,12 @@
       <End Role="GOITAP" EntitySet="GOITAPs" />
       <End Role="DK_THANHVIEN" EntitySet="DK_THANHVIEN" />
     </AssociationSet>
+    <EntitySet Name="BAOCAO_THONGKE" EntityType="DBWebGymModel.BAOCAO_THONGKE" />
+    <EntitySet Name="CHAMCONGs" EntityType="DBWebGymModel.CHAMCONG" />
+    <AssociationSet Name="FK_CHAMCONG_DK_THANHVIEN" Association="DBWebGymModel.FK_CHAMCONG_DK_THANHVIEN">
+      <End Role="DK_THANHVIEN" EntitySet="DK_THANHVIEN" />
+      <End Role="CHAMCONG" EntitySet="CHAMCONGs" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="DK_THANHVIEN">
     <Key>
@@ -320,6 +326,7 @@
     <Property Name="ThanhToan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="GOITAP" Relationship="DBWebGymModel.FK__DK_THANHV__MaGoi__6FE99F9F" FromRole="DK_THANHVIEN" ToRole="GOITAP" />
     <Property Name="MaDKTV" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <NavigationProperty Name="CHAMCONGs" Relationship="DBWebGymModel.FK_CHAMCONG_DK_THANHVIEN" FromRole="DK_THANHVIEN" ToRole="CHAMCONG" />
   </EntityType>
   <Association Name="FK__DK_THANHV__MaGoi__6FE99F9F">
     <End Type="DBWebGymModel.GOITAP" Role="GOITAP" Multiplicity="1" />
@@ -330,6 +337,41 @@
       </Principal>
       <Dependent Role="DK_THANHVIEN">
         <PropertyRef Name="MaGoiTap" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="BAOCAO_THONGKE">
+    <Key>
+      <PropertyRef Name="MaBaoCao" />
+    </Key>
+    <Property Name="MaBaoCao" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NgayBaoCao" Type="DateTime" Precision="0" />
+    <Property Name="TongSoThanhVien" Type="Int32" />
+    <Property Name="TongSoGoiTapDangKy" Type="Int32" />
+    <Property Name="TongSoBuoiTap" Type="Int32" />
+    <Property Name="TongDoanhThu" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SoLuongDichVu" Type="Int32" />
+    <Property Name="SoNhanVien" Type="Int32" />
+    <Property Name="GhiChu" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CHAMCONG">
+    <Key>
+      <PropertyRef Name="MaChamCong" />
+    </Key>
+    <Property Name="MaChamCong" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MaDKTV" Type="Int32" Nullable="false" />
+    <Property Name="NgayTap" Type="DateTime" Nullable="false" Precision="0" />
+    <NavigationProperty Name="DK_THANHVIEN" Relationship="DBWebGymModel.FK_CHAMCONG_DK_THANHVIEN" FromRole="CHAMCONG" ToRole="DK_THANHVIEN" />
+  </EntityType>
+  <Association Name="FK_CHAMCONG_DK_THANHVIEN">
+    <End Type="DBWebGymModel.DK_THANHVIEN" Role="DK_THANHVIEN" Multiplicity="1" />
+    <End Type="DBWebGymModel.CHAMCONG" Role="CHAMCONG" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="DK_THANHVIEN">
+        <PropertyRef Name="MaDKTV" />
+      </Principal>
+      <Dependent Role="CHAMCONG">
+        <PropertyRef Name="MaDKTV" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
